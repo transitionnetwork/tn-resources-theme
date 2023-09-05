@@ -1,0 +1,26 @@
+.wpcf7-form {
+  @apply text-left;
+
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    @apply border-0 rounded-lg w-full mt-2 text-gray-800 p-4;
+  }
+
+  label {
+    @apply text-sm uppercase tracking-extra-wide;
+
+    sup {
+      @apply text-red-500;
+    }
+  }
+
+  input[type="submit"] {
+    @apply btn;
+    @apply btn-secondary;
+  }
+
+  .field-wrap {
+    @apply p-4;
+  }
+}

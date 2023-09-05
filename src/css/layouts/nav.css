@@ -1,0 +1,16 @@
+nav .menu-item {
+  @apply lg:tracking-extra-wide uppercase text-4xl lg:text-sm font-extrabold lg:font-bold mt-5 lg:mt-0;
+
+  a {
+    @apply text-black no-underline hover:text-brand;
+  }
+
+  &:last-of-type {
+    @apply tracking-extra-wide;
+
+    a {
+      @apply btn;
+      @apply btn-primary;
+    }
+  }
+}

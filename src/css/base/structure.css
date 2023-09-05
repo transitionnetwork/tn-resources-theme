@@ -1,0 +1,30 @@
+html {
+  @apply h-full;
+}
+
+body {
+  @apply antialiased bg-white;
+
+  &.footer-sticky {
+    @apply flex flex-col min-h-screen;
+
+    .wrapper {
+      flex: 1 0 auto;
+
+      @apply w-full;
+    }
+  }
+
+  &.no-fout {
+    @apply invisible;
+
+    .wf-inactive &,
+    .wf-active & {
+      @apply visible;
+    }
+  }
+}
+
+footer {
+  @apply bg-gray-100;
+}

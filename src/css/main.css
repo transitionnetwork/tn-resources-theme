@@ -1,0 +1,20 @@
+@import 'tailwindcss/base';
+
+@import 'tailwindcss/components';
+
+@import 'base/alerts';
+@import 'base/menu';
+@import 'base/social-icons';
+@import 'base/structure';
+@import 'base/content';
+
+@import 'layouts/nav';
+@import 'layouts/footer';
+
+@import 'components/embed';
+@import 'components/container';
+@import 'components/forms';
+
+@import 'components/buttons';
+
+@import 'tailwindcss/utilities';
