@@ -28,7 +28,7 @@ export default {
     }
 
     // Menu
-    if (document.getElementById('menu-header-navigation')) {
+    if (document.getElementById('menu-primary')) {
       Menu();
     }
   },

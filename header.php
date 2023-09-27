@@ -11,15 +11,6 @@ use \Tofino\ThemeOptions\Notifications as n; ?>
   
   <?php get_template_part('/templates/partials/favicon'); ?>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@900&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css"
-  />
-</head>
 <body <?php body_class(); ?>>
 
 <?php wp_body_open(); ?>

@@ -1,0 +1,15 @@
+# wp4.xinc.digital:
+#   user: wp5
+#   identity_file: ~
+#   stage: production
+#   deploy_path: ~/web/nldrfu.co.uk/public_html/wp-content/themes
+#   branch: main
+#   api_key: ~
+
+# stage.xinc.digital:
+#   user: stage
+#   identity_file: ~
+#   stage: stage
+#   deploy_path: ~/web/deltatech.stage.xinc.digital/public_html/wp-content/themes
+#   branch: main
+#   api_key: ~

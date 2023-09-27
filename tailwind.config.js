@@ -23,8 +23,6 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        'sans': ['Montserrat', 'ui-sans-serif', 'system-ui'],
-        'header': ['Alegrya Sans', 'ui-sans-serif', 'system-ui'],
       },
       fontSize: {
         '8xl': '5.125rem',
@@ -63,18 +61,14 @@ module.exports = {
       zIndex: {
         '-1': '-1',
       },
-      letterSpacing: {
-        'extra-wide': '2.5px',
-      },
       maxWidth: {
         'dirtxl': '960px',
       },
       colors: {
         brand: {
-          DEFAULT: '#6D2183',
-          dark: '#541369',
-          secondary: '#21833E',
-          tertiary: '#94B94C',
+          DEFAULT: '#070939',
+          secondary: '#1F3543',
+          tertiary: '#D6002E',
           gray: '#4D4D4D',
           black: '#000000'
         },

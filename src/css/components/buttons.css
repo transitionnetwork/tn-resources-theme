@@ -1,6 +1,6 @@
 @layer components {
   .btn {
-    @apply relative inline-flex items-center px-6 py-2 border border-transparent rounded-full shadow-sm transition ease-in-out duration-150 whitespace-nowrap uppercase font-bold justify-center no-underline tracking-extra-wide text-sm hover:brightness-110 focus:outline-none focus:ring;
+    @apply relative inline-flex items-center px-6 py-2 border border-transparent rounded-md shadow-sm transition ease-in-out duration-150 whitespace-nowrap uppercase font-bold justify-center no-underline tracking-widest text-sm hover:brightness-110 focus:outline-none focus:ring;
   }
 
   .btn-primary {

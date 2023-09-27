@@ -1,5 +1,5 @@
 .footer_menu {
   a {
-    @apply text-white no-underline uppercase tracking-extra-wide hover:text-brand;
+    @apply text-white no-underline uppercase tracking-widest hover:text-brand;
   }
 }

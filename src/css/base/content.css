@@ -14,7 +14,7 @@ h3,
 .h3,
 h4,
 .h4 {
-  @apply uppercase font-extrabold leading-extra-tight text-black font-header;
+  @apply uppercase font-extrabold leading-extra-tight text-black;
 
   a {
     @apply text-black no-underline hover:underline;
