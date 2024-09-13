@@ -8,8 +8,6 @@ const Menu = () => {
     menu = document.getElementById('main-menu'),
     icons = document.querySelectorAll('.toggle-icons');
 
-  console.log(buttons);
-
   buttons.forEach(el => {
     el.addEventListener('click', () => {
       // Toggle the hide class

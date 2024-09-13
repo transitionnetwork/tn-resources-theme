@@ -1,9 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
 svg {
   @apply w-8 h-8;
 }
 
 a {
   @apply text-brand underline;
+}
+
+body {
+  @apply font-sans;
 }
 
 h1,
@@ -14,7 +21,7 @@ h3,
 .h3,
 h4,
 .h4 {
-  @apply uppercase font-extrabold leading-extra-tight text-black;
+  @apply font-display font-extrabold leading-extra-tight text-black;
 
   a {
     @apply text-black no-underline hover:underline;

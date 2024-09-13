@@ -1,5 +1,10 @@
-<main class="text-center">
-  <?php if(have_rows('flexible_content')) {?>
+<main class="content">
+   
+  <h1 class=""><?php echo \Tofino\Helpers\title(); ?></h1>
+
+   <?php get_template_part('templates/flexible-content/intro'); ?>
+  
+   <?php if(have_rows('flexible_content')) {?>
 
     <?php while(have_rows('flexible_content') ) : the_row();  ?>
       <?php //var_dump(get_row_layout()); ?>

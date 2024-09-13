@@ -1,16 +1,7 @@
 nav .menu-item {
-  @apply lg:tracking-widest uppercase text-4xl lg:text-sm font-extrabold lg:font-bold mt-5 lg:mt-0;
+  @apply text-4xl lg:text-sm mt-5 lg:mt-0;
 
   a {
     @apply text-black no-underline hover:text-brand;
-  }
-
-  &:last-of-type {
-    @apply tracking-widest;
-
-    a {
-      @apply btn;
-      @apply btn-primary;
-    }
   }
 }

@@ -23,6 +23,8 @@ module.exports = {
     },
     extend: {
       fontFamily: {
+        'sans': ['Manrope', 'Arial', 'Helvetica', 'sans-serif'],
+        'display': ['Plus Jakarta Sans', 'Arial', 'Helvetica', 'sans-serif']
       },
       fontSize: {
         '8xl': '5.125rem',
