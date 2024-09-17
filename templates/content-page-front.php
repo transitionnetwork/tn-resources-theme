@@ -1,10 +1,10 @@
-<main class="content">
-   
-  <h1 class=""><?php echo \Tofino\Helpers\title(); ?></h1>
+<main class="container content my-12">
 
-   <?php get_template_part('templates/flexible-content/intro'); ?>
+  <?php get_template_part('templates/partials/hero-banner'); ?>
+   
+  <?php get_template_part('templates/flexible-content/intro'); ?>
   
-   <?php if(have_rows('flexible_content')) {?>
+  <?php if(have_rows('flexible_content')) {?>
 
     <?php while(have_rows('flexible_content') ) : the_row();  ?>
       <?php //var_dump(get_row_layout()); ?>

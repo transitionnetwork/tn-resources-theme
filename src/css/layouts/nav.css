@@ -1,5 +1,11 @@
 nav .menu-item {
-  @apply text-4xl lg:text-sm mt-5 lg:mt-0;
+  @apply text-2xl lg:text-base mt-5 my-6 lg:my-0;
+
+  &:last-of-type {
+    a {
+      @apply bg-brand text-white p-6 block hover:text-white hover:brightness-125;
+    }
+  }
 
   a {
     @apply text-black no-underline hover:text-brand;

@@ -21,7 +21,7 @@ h3,
 .h3,
 h4,
 .h4 {
-  @apply font-display font-extrabold leading-extra-tight text-black;
+  @apply font-display font-extrabold text-black leading-tight;
 
   a {
     @apply text-black no-underline hover:underline;
@@ -30,7 +30,7 @@ h4,
 
 h1,
 .h1 {
-  @apply text-4xl lg:text-5xl;
+  @apply text-4xl lg:text-5xl xl:text-6xl;
 }
 
 h2,

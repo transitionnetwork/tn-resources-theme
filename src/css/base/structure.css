@@ -3,7 +3,13 @@ html {
 }
 
 body {
-  @apply antialiased bg-white;
+  @apply antialiased;
+  
+  background: rgb(255,224,242);
+  background: linear-gradient(45deg, rgba(255,224,242,1) 0%, rgba(255,255,255,1) 100%);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+
 
   &.footer-sticky {
     @apply flex flex-col min-h-screen;

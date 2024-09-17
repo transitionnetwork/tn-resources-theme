@@ -25,12 +25,14 @@ $this_item = dx_get_current_nav_item();
 ?>
 
 <header class="bg-white <?php echo m\menu_sticky(); ?>">
-  <nav class="w-full py-4 justify-between flex container">
-      <div class="flex-shrink-0 flex items-center">
-        <a href="<?php echo home_url(); ?>"><?php echo get_bloginfo(); ?></a>
-      </div>
+  <nav class="w-full justify-between flex my-4 lg:my-0">
+    <div class="flex-shrink-0 flex items-center mx-6">
+      <a href="<?php echo home_url(); ?>">
+        <?php echo svg(array('sprite' => 'logo', 'class' => 'w-24 h-8')); ?>
+      </a>
+    </div>
 
-    <button class="flex items-center lg:hidden js-menu-toggle z-50" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="flex items-center lg:hidden js-menu-toggle z-50 mx-6" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <!-- Hamburger Icon -->
       <span class="w-6 h-6">
         <?php echo svg(['sprite' => 'icon-hamburger', 'class' => 'w-full h-full toggle-icons']); ?>
@@ -41,6 +43,10 @@ $this_item = dx_get_current_nav_item();
     </button>
 
     <div class="fixed inset-0 hidden w-full h-screen bg-white lg:h-auto lg:relative lg:w-auto lg:flex lg:items-center z-20" id="main-menu">
+      <div class="whitespace-nowrap mr-12 hidden lg:block">
+        <span class="text-sm">tel:</span>
+        <span class="font-bold text-lg"><?php echo get_field('phone_number', 'options'); ?></span>
+      </div>
       <?php
       if (has_nav_menu('header_navigation')) :
         wp_nav_menu([
@@ -50,7 +56,7 @@ $this_item = dx_get_current_nav_item();
           'container'       => '',
           'container_class' => '',
           'container_id'    => '',
-          'menu_class'      => 'navbar-nav flex justify-center items-center w-full h-full lg:space-x-6 flex-col lg:flex-row text-center px-4 lg:px-0',
+          'menu_class'      => 'navbar-nav flex justify-center items-center w-full h-full lg:space-x-6 flex-col lg:flex-row text-center px-4 md:px-0',
           'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
         ]);
       endif; ?>

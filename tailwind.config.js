@@ -58,7 +58,7 @@ module.exports = {
         '8/9': '88.8888%',
       },
       minHeight: {
-        'hero-screen': '80vh'
+        'hero-screen': '60vh'
       },
       zIndex: {
         '-1': '-1',
@@ -68,7 +68,7 @@ module.exports = {
       },
       colors: {
         brand: {
-          DEFAULT: '#070939',
+          DEFAULT: '#EC008C',
           secondary: '#1F3543',
           tertiary: '#D6002E',
           gray: '#4D4D4D',

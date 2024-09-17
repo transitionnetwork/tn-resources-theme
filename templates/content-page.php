@@ -1,4 +1,4 @@
-<main class="content">
+<main class="content container mt-24">
    
   <h1 class=""><?php echo \Tofino\Helpers\title(); ?></h1>
 
