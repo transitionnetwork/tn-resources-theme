@@ -5,7 +5,7 @@ if (get_theme_mod('footer_sticky') === 'enabled') : ?>
   </div>
 <?php endif; ?>
 
-<footer class="bg-black">
+<footer class="bg-black pb-6">
   <div class="bg-container py-5 text-center text-white space-y-2">
     <div class="flex justify-center space-x-2">
       <div>
