@@ -3,7 +3,7 @@ nav .menu-item {
 
   &:last-of-type {
     a {
-      @apply bg-brand text-white p-6 block hover:text-white hover:brightness-125;
+      @apply bg-brand text-white p-8 block hover:text-white hover:brightness-125;
     }
   }
 
