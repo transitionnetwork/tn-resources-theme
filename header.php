@@ -67,10 +67,17 @@ $this_item = dx_get_current_nav_item();
         </div>
       </div>
       <div class="flex items-center">
-        <a href="<?php echo get_the_permalink( 39 ); ?>" class="btn btn-secondary space-x-1">
-          <?php echo svg(['sprite' => 'icon-arrow-right', 'class' => 'text-white size-5']); ?>
-          <span>Login</span>
-        </a>
+        <?php if(!is_user_logged_in(  )) { ?>
+          <a href="<?php echo get_the_permalink( 39 ); ?>" class="btn btn-secondary space-x-1">
+            <?php echo svg(['sprite' => 'icon-arrow-right', 'class' => 'text-white size-4']); ?>
+            <span>Login</span>
+          </a>
+        <?php } else { ?>
+          <a href="<?php echo wp_logout_url(); ?>" class="btn btn-secondary space-x-1">
+            <?php echo svg(['sprite' => 'icon-arrow-right', 'class' => 'text-white size-4 rotate-180']); ?>
+            <span>Logout</span>
+          </a>
+        <?php } ?> 
       </div>
     </div>
 

@@ -4,7 +4,7 @@ dedi2835.your-server.de:
   stage: production
   port: 222
   deploy_path: ~/public_html/resources/wp-content/themes
-  branch: master
+  branch: main
   api_key: 48485499448090244f414ddfae8cb4183577a
 
 # transitionnetwork.org:
