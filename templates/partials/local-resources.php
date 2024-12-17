@@ -12,10 +12,11 @@ $args = array(
     <div class="container">
       <h2 class="h3">Local Resources</h2>
 
-      Your Location is <span class="location-name"></span><br/>
+      Your country is <span class="location-name"></span><br/>
+      Your region is <span class="location-region"></span><br/>
+      Your continent is <span class="location-continent"></span><br/>
+      The main language spoken is <span class="location-lang"></span><br/>
       Your IP is <span class="location-ip"></span>
-
-    
     </div>
   </div>
 <?php } ?>
