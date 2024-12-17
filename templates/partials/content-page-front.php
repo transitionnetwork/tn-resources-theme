@@ -1,4 +1,4 @@
-<main class="mb-12">
+<main class="content mb-12">
 
   <?php get_template_part('templates/partials/hero-banner'); ?>
   <?php get_template_part('templates/partials/browse-categories'); ?>

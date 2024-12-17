@@ -1,5 +1,9 @@
-.acf-button.button-primary {
-  @apply btn btn-primary btn-sm mb-6;
+.acf-button.button {
+  @apply btn btn-secondary btn-sm mb-6;
+
+  &.button-primary {
+    @apply btn-primary;
+  }
 }
 
 .acfe-form {
