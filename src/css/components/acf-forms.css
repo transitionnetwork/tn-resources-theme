@@ -1,0 +1,9 @@
+.acf-button.button-primary {
+  @apply btn btn-primary btn-sm mb-6;
+}
+
+.acfe-form {
+  .acf-fields > .acf-field {
+    @apply py-8;
+  }
+}

@@ -22,6 +22,10 @@
       @apply items-start lg:justify-start;
     }
   }
+
+  .btn-sm {
+    @apply px-4 py-1;
+  }
 }
 
 .openid-connect-login-button {
