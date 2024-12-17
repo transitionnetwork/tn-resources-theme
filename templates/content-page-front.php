@@ -1,6 +1,7 @@
-<main class="container content my-12">
+<main class="content mb-12">
 
   <?php get_template_part('templates/partials/hero-banner'); ?>
+  <?php get_template_part('templates/partials/browse-categories'); ?>
    
   <?php get_template_part('templates/flexible-content/intro'); ?>
   

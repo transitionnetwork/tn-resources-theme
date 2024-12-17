@@ -6,4 +6,11 @@
   .acf-fields > .acf-field {
     @apply py-8;
   }
+
+  .acf-field input,
+  .acf-editor-wrap .wp-editor-container,
+  select {
+    @apply field;
+  }
+
 }

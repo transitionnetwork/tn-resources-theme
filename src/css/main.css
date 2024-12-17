@@ -17,5 +17,6 @@
 
 @import 'components/buttons';
 @import 'components/acf-forms';
+@import 'components/components';
 
 @import 'tailwindcss/utilities';
