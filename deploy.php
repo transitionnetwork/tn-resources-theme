@@ -5,7 +5,7 @@ require 'recipe/common.php';
 
 // Start editable
 
-set('repository', '##');
+set('repository', 'git@bitbucket.org:dadads/tn-resources-theme.git');
 
 set('ssh_type', 'native');
 set('ssh_multiplexing', true);
@@ -27,7 +27,7 @@ task('deploy:upload_dist', function() {
 
 task('deploy:theme_composer', function() {
   cd('{{release_path}}');
-  run('composer install');
+  run('~/composer.phar install');
 })->desc('Remote composer install');
 
 task('setup', [
