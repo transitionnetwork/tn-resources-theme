@@ -35,6 +35,7 @@ $tofino_includes = [
 
 $custom_includes = [
   "src/custom/register-types.php",
+  "src/custom/helpers.php",
 ];
 
 $tofino_includes = array_merge($tofino_includes, $custom_includes);
@@ -153,29 +154,4 @@ function dx_get_current_nav_item() {
   } 
 
   return 'false';
-}
-
-function dx_get_social_media($socials, $bg_col = 'dark') {
-  $social_output = array();
-  foreach($socials as $social) {
-    ob_start();
-    include(TEMPLATEPATH . '/svg/' . $social['network'] . '.php');
-    $svg = ob_get_clean();
-
-    if($bg_col === 'dark') {
-      $social_output[] = '<a class="text-white hover:text-gray-300" href="' . $social['url'] . '" target="_blank">' . $svg . '</a>';
-    } else {
-      $social_output[] = '<a class="text-black hover:text-gray-700" href="' . $social['url'] . '" target="_blank">' . $svg . '</a>';
-    }
-  }
-
-  return implode('', $social_output);
-}
-
-function dx_convert_youtube_url($string) {
-  return preg_replace(
-      "/\s*[a-zA-Z\/\/:\.]*youtu(be.com\/watch\?v=|.be\/)([a-zA-Z0-9\-_]+)([a-zA-Z0-9\/\*\-\_\?\&\;\%\=\.]*)/i",
-      "<iframe src=\"//www.youtube.com/embed/$2\" allowfullscreen></iframe>",
-      $string
-  );
 }

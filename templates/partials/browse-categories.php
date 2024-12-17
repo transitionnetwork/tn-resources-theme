@@ -11,10 +11,8 @@
         <?php $count = 0; ?>
         <?php foreach($terms as $key => $term) { ?>
           <?php if(get_field('project_type_icon', 'term_' . $term->term_id) && $count < 6) { ?>
-            <div class="col-span-6 sm:col-span-4 lg:col-span-2">
-              <?php get_template_part('templates/cards/category', null, $term); ?>
-              <?php $count ++; ?>
-            </div>
+            <?php get_template_part('templates/cards/category', null, $term); ?>
+            <?php $count ++; ?>
           <?php } ?>
         <?php } ?>
       </div>

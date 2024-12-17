@@ -4,8 +4,12 @@ import Alert from './modules/alert';
 // Menu
 import Menu from './modules/menu';
 
+//Geolocation
+import GeoLocate from './modules/geolocate';
+
 // Import Font loader
 import WebFont from 'webfontloader';
+
 
 export default {
   init () {
@@ -30,6 +34,10 @@ export default {
     // Menu
     if (document.getElementById('menu-primary-navigation')) {
       Menu();
+    }
+
+    if (document.getElementById('geolocated-content')) {
+      GeoLocate();
     }
   },
   finalize () {
