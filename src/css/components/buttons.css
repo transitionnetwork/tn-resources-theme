@@ -1,6 +1,6 @@
 @layer components {
   .btn {
-    @apply relative inline-flex items-center px-6 py-2 border border-transparent shadow-sm transition ease-in-out duration-150 whitespace-nowrap uppercase font-bold justify-center no-underline tracking-widest text-sm hover:brightness-110 focus:outline-none focus:ring;
+    @apply relative inline-flex items-center px-6 py-2 border border-transparent shadow-sm transition ease-in-out duration-150 whitespace-nowrap font-bold justify-center no-underline hover:brightness-110 focus:outline-none focus:ring rounded-md;
   }
 
   .btn-primary {
@@ -21,5 +21,13 @@
     &.hero-buttons {
       @apply items-start lg:justify-start;
     }
+  }
+}
+
+.openid-connect-login-button {
+  text-align: left !important;
+
+  .button {
+    @apply btn btn-primary;
   }
 }

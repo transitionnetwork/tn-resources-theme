@@ -1,6 +1,6 @@
-<main class="content container mt-24">
+<main class="content container mt-12">
    
-  <h1 class=""><?php echo \Tofino\Helpers\title(); ?></h1>
+  <h1 class="h2"><?php echo \Tofino\Helpers\title(); ?></h1>
 
    <?php get_template_part('templates/flexible-content/intro'); ?>
   

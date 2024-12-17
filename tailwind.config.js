@@ -68,7 +68,7 @@ module.exports = {
       },
       colors: {
         brand: {
-          DEFAULT: '#EC008C',
+          DEFAULT: '#007E8A',
           secondary: '#1F3543',
           tertiary: '#D6002E',
           gray: '#4D4D4D',

@@ -33,11 +33,13 @@ add_action('wp_dashboard_setup', __NAMESPACE__ . '\\remove_widgets', 999);
 // Remove Howdy from Admin Area
 function change_howdy($wp_admin_bar) {
   $my_account = $wp_admin_bar->get_node('my-account');
-  $title   = str_replace('Howdy, ', '', $my_account->title);
-  $wp_admin_bar->add_node([
-    'id'    => 'my-account',
-    'title' => $title,
-  ]);
+  if($my_account) { 
+    $title   = str_replace('Howdy, ', '', $my_account->title);
+    $wp_admin_bar->add_node([
+      'id'    => 'my-account',
+      'title' => $title,
+    ]);
+  }
 }
 add_filter('admin_bar_menu', __NAMESPACE__ . '\\change_howdy', 25);
 
