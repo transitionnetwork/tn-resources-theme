@@ -9,7 +9,7 @@
       </div>
       <form class="flex space-x-2">
         <div class="field-wrapper w-full">
-          <input type="text" name="search" id="search" class="field w-full" placeholder="Search resources...">
+          <input type="text" name="s" id="search" class="field w-full" placeholder="Search resources...">
           
           <?php echo svg(['sprite' => 'icon-search', 'class' => 'pointer-events-none col-start-1 row-start-1 ml-3 size-5 self-center text-gray-400 sm:size-4']); ?>
         </div>
