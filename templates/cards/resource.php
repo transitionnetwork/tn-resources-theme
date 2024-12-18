@@ -4,7 +4,7 @@
       <div class="absolute inset-0 bg-gray-300"></div>
     </div>
     <div class="p-3">
-      <h4><?php the_title(); ?></h4>
+      <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
       <p></p>
     </div>
   </div>

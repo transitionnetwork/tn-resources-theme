@@ -16,7 +16,7 @@
           <?php } ?>
         <?php } ?>
       </div>
-      <a href="#" class="no-underline hover:underline text-center flex space-x-2 items-center justify-center">
+      <a href="<?php echo home_url('project-types'); ?>" class="no-underline hover:underline text-center flex space-x-2 items-center justify-center">
         <span>View all categories</span>
         <span>
           <?php echo svg(['sprite' => 'icon-arrow-right', 'class' => 'text-black size-4']); ?>
