@@ -3,9 +3,10 @@
     <div class="h-0 pt-2/3 relative">
       <div class="absolute inset-0 bg-gray-300"></div>
     </div>
-    <div class="p-3">
-      <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
-      <p><?php the_excerpt(); ?></p>
+    <div class="p-3 space-y-4">
+      <?php get_template_part('templates/partials/content-types'); ?>
+      <h3 class="h4"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+      <?php the_excerpt(); ?>
       <a class="btn btn-tertiary block text-center" href="<?php the_permalink(); ?>">Read Guide</a>
     </div>
   </div>

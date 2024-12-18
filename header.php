@@ -25,7 +25,7 @@ $this_item = dx_get_current_nav_item();
 ?>
 
 <header class="bg-white <?php echo m\menu_sticky(); ?>">
-  <nav class="w-full flex justify-between lg:my-0 space-x-4 px-4">
+  <nav class="w-full flex flex-wrap justify-between lg:my-0 px-4">
 
     <div class="flex space-x-0 lg:space-x-6">
       <div class="flex-shrink-0 flex items-center text-xl py-4 font-extrabold">
@@ -51,14 +51,23 @@ $this_item = dx_get_current_nav_item();
       </div>
     </div>
 
-    <div class="hidden space-x-2 lg:flex">
+    <button class="flex items-center lg:hidden js-menu-toggle z-50" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <!-- Hamburger Icon -->
+      <span class="size-6">
+      <?php echo svg(['sprite' => 'icon-hamburger', 'class' => 'w-full h-full toggle-icons']); ?>
+      <?php echo svg(['sprite' => 'icon-close', 'class' => 'w-full h-full hidden toggle-icons']); ?>
+      </span>
+      <span class="sr-only"><?php _e('Toggle Navigation Button', 'tofino'); ?></span>
+    </button>
+
+    <div class="flex space-x-2 w-full lg:w-auto py-2">
       <div class="flex items-center">
         <a href="<?php echo get_the_permalink( 37 ); ?>" class="btn btn-primary space-x-1">
           <?php echo svg(['sprite' => 'icon-plus', 'class' => 'text-white w-5 h-5']); ?>
           <span>Submit Resource</span>
         </a>
       </div>
-      <div class="flex items-center">
+      <div class="hidden md:flex items-center">
         <label for="email" class="hidden text-sm/6 font-medium text-gray-900">Search</label>
         <form class="field-wrapper">
           <input type="text" name="search" id="search" class="field" placeholder="resources">
@@ -80,16 +89,6 @@ $this_item = dx_get_current_nav_item();
         <?php } ?> 
       </div>
     </div>
-
-    <button class="flex items-center lg:hidden js-menu-toggle z-50 mx-6" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <!-- Hamburger Icon -->
-      <span class="size-6">
-      <?php echo svg(['sprite' => 'icon-hamburger', 'class' => 'w-full h-full toggle-icons']); ?>
-      <?php echo svg(['sprite' => 'icon-close', 'class' => 'w-full h-full hidden toggle-icons']); ?>
-      </span>
-      <span class="sr-only"><?php _e('Toggle Navigation Button', 'tofino'); ?></span>
-    </button>
-
 
   </nav>
 </header>

@@ -12,7 +12,7 @@
   }
 
   .btn-tertiary {
-    @apply bg-white text-gray-700 border-gray-500;
+    @apply bg-white text-gray-700 border-gray-500 hover:bg-brand-secondary hover:text-white;
   }
 
   .button-group {

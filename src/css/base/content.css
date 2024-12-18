@@ -43,6 +43,11 @@ h3,
   @apply text-xl lg:text-2xl xl:text-3xl;
 }
 
+h4,
+.h4 {
+  @apply text-lg lg:text-xl xl:text-2xl;
+}
+
 .content {
   @apply text-gray-700;
 
