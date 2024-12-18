@@ -1,7 +1,4 @@
-<?php $args = array(
-  'post_type' => 'resource',
-  'posts_per_page' => 3,
-); ?>
+<?php $args['post_type'] = 'resource'; ?>
 
 <?php $posts = get_posts($args); ?>
 

@@ -3,7 +3,7 @@
   <?php get_template_part('templates/partials/hero-banner'); ?>
   <?php get_template_part('templates/partials/browse-categories'); ?>
   <?php get_template_part('templates/partials/local-resources'); ?>
-  <?php get_template_part('templates/partials/featured-resources'); ?>
+  <?php get_template_part('templates/partials/resources-grid', null, array('posts_per_page'  => 3) ); ?>
 
    
   <?php get_template_part('templates/flexible-content/intro'); ?>

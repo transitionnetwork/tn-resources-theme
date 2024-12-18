@@ -7,6 +7,8 @@ import Menu from './modules/menu';
 //Geolocation
 import GeoLocate from './modules/geolocate';
 
+import saveUserLocation from './modules/save-user-location';
+
 // Import Font loader
 import WebFont from 'webfontloader';
 
@@ -38,6 +40,10 @@ export default {
 
     if (document.getElementById('geolocated-content')) {
       GeoLocate();
+    }
+    
+    if (document.getElementById('save-user-location')) {
+      saveUserLocation();
     }
   },
   finalize () {

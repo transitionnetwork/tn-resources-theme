@@ -96,6 +96,7 @@ function localize_scripts() {
       'themeUrl'       => get_template_directory_uri(),
       'notificationJS' => (get_theme_mod('notification_use_js') ? 'true' : 'false'),
       'siteURL'        => site_url(),
+      'userID'         => wp_get_current_user(  )->ID
     ]);
   } 
 }

@@ -36,6 +36,9 @@ $tofino_includes = [
 $custom_includes = [
   "src/custom/register-types.php",
   "src/custom/helpers.php",
+  "src/custom/routes.php",
+  "src/custom/ajax/write_location.php",
+  "src/custom/ajax/get_popular_resources.php",
 ];
 
 $tofino_includes = array_merge($tofino_includes, $custom_includes);
