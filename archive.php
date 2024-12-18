@@ -5,7 +5,6 @@ $slug      = isset(get_queried_object()->slug) ? get_queried_object()->slug: nul
 $taxonomy  = isset(get_queried_object()->taxonomy) ? get_queried_object()->taxonomy: null;
 $post_type = isset(get_queried_object()->name) ? get_queried_object()->name : null;
 
-// var_dump($taxonomy);
 // var_dump(get_template_part('templates/archive', $taxonomy));
 
 if (locate_template('templates/archive-' . $slug . '.php') != '') { // archive-{category-slug}
@@ -18,6 +17,8 @@ if (locate_template('templates/archive-' . $slug . '.php') != '') { // archive-{
   get_template_part('templates/archive', $taxonomy);
 } elseif ($post_type && (locate_template('templates/archive-' . $post_type . '.php') != '')) { // archive-{posttype}
   get_template_part('templates/archive', $post_type);
+} else if (locate_template('templates/archive.php') != '') {
+  get_template_part('templates/archive');
 } else {
   echo('<div class="error notice"><p>' . __('Error: Unable to locate an archive template. Did you create the file in /templates?.', 'tofino') . '</p></div>');
 } ?>
