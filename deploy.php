@@ -5,7 +5,7 @@ require 'recipe/common.php';
 
 // Start editable
 
-set('repository', 'git@github.com:transitionnetwork/tn-resources-theme.git');
+set('repository', 'https://github.com/transitionnetwork/tn-resources-theme');
 
 set('ssh_type', 'native');
 set('ssh_multiplexing', true);
