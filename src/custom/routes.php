@@ -1,5 +1,5 @@
 <?php
-//love this shit. so fucking useful
+//love this. so useful
 add_action( 'init',  function() {
     add_rewrite_rule( 'location/([a-z0-9-]+)[/]?$', 'index.php?location=$matches[1]', 'top' );
 } );

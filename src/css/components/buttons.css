@@ -12,7 +12,7 @@
   }
 
   .btn-tertiary {
-    @apply bg-brand-tertiary text-white;
+    @apply bg-white text-gray-700 border-gray-500;
   }
 
   .button-group {
@@ -25,13 +25,5 @@
 
   .btn-sm {
     @apply px-4 py-1;
-  }
-}
-
-.openid-connect-login-button {
-  text-align: left !important;
-
-  .button {
-    @apply btn btn-primary;
   }
 }

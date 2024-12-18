@@ -68,9 +68,9 @@ $this_item = dx_get_current_nav_item();
       </div>
       <div class="flex items-center">
         <?php if(!is_user_logged_in(  )) { ?>
-          <a href="<?php echo get_the_permalink( 39 ); ?>" class="btn btn-secondary space-x-1">
+          <a href="<?php echo do_shortcode('[openid_connect_generic_auth_url]'); ?>" class="btn btn-secondary space-x-1">
             <?php echo svg(['sprite' => 'icon-arrow-right', 'class' => 'text-white size-4']); ?>
-            <span>Login</span>
+            <span>Login with Transition ID</span>
           </a>
         <?php } else { ?>
           <a href="<?php echo wp_logout_url(); ?>" class="btn btn-secondary space-x-1">

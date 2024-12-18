@@ -5,7 +5,8 @@
     </div>
     <div class="p-3">
       <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
-      <p></p>
+      <p><?php the_excerpt(); ?></p>
+      <a class="btn btn-tertiary block text-center" href="<?php the_permalink(); ?>">Read Guide</a>
     </div>
   </div>
 </div>

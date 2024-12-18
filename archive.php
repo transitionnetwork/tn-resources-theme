@@ -5,6 +5,9 @@ $slug      = isset(get_queried_object()->slug) ? get_queried_object()->slug: nul
 $taxonomy  = isset(get_queried_object()->taxonomy) ? get_queried_object()->taxonomy: null;
 $post_type = isset(get_queried_object()->name) ? get_queried_object()->name : null;
 
+// var_dump($taxonomy);
+// var_dump(get_template_part('templates/archive', $taxonomy));
+
 if (locate_template('templates/archive-' . $slug . '.php') != '') { // archive-{category-slug}
   get_template_part('templates/archive', $slug); // e.g. templates/archive-category-slug.php
 } elseif (locate_template('templates/archive-' . $taxonomy . '-' . $slug . '.php') != '') { // archive-{taxonomy}-{term}
