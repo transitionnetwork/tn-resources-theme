@@ -7,7 +7,7 @@
       <div class="content">
         <?php echo get_field('hero_content'); ?>
       </div>
-      <form class="flex space-x-4">
+      <form class="flex space-x-2">
         <div class="field-wrapper w-full">
           <input type="text" name="search" id="search" class="field w-full" placeholder="Search resources...">
           

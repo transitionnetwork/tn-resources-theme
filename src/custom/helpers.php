@@ -9,7 +9,11 @@ function xinc_convert_youtube_url($string) {
   );
 }
 
-function wpdocs_custom_excerpt_length( $length ) {
-	return 20;
+function xinc_preview_content($post = null, $words = 20) {
+  if(get_post_field('post_content', $post)) {
+    $content = strip_tags(get_post_field('post_content', $post) . '[...]');
+    return wp_trim_words($content, $words);
+  }
+
+  return;
 }
-add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );

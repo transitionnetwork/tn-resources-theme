@@ -12,14 +12,9 @@ $args = array(
     <div class="container">
       <h2 class="h3">Local Resources for <span class="location-name"></span></h2>
 
-      <div>
-        Your country is <span class="location-name"></span><br/>
-        Your region is <span class="location-region"></span><br/>
-        Your continent is <span class="location-continent"></span><br/>
-        The main language spoken is <span class="location-lang"></span><br/>
-        Your IP is <span class="location-ip"></span>
-      </div>
-
+      <!-- <div>
+        Your country is <span class="location-name"></span> in <span class="location-region"></span> in <span class="location-continent"></span>. The main language spoken is <span class="location-lang"></span>. Your IP is <span class="location-ip"></span>
+      </div> -->
 
       <div id="local-resources-grid" class="grid grid-cols-12 gap-6 my-12">
       </div>
