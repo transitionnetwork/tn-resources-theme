@@ -3,6 +3,7 @@
   'hide_empty' => false
 )); ?>
 
+
 <?php if($terms) { ?>
   <div class="py-12">
     <div class="container">
@@ -10,7 +11,7 @@
       <div class="grid grid-cols-12 gap-6 my-12">
         <?php $count = 0; ?>
         <?php foreach($terms as $key => $term) { ?>
-          <?php if(get_field('project_type_icon', 'term_' . $term->term_id) && $count < 6) { ?>
+          <?php if(get_field('term_icon', 'term_' . $term->term_id) && $count < 6) { ?>
             <?php get_template_part('templates/cards/category', null, $term); ?>
             <?php $count ++; ?>
           <?php } ?>
