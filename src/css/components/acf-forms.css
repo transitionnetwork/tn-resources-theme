@@ -11,10 +11,10 @@
     @apply py-8;
   }
 
-  .acf-field input,
+  .acf-field input[type="text"],
   .acf-editor-wrap .wp-editor-container,
   select {
-    @apply field;
+    @apply field p-2;
   }
 
 }
