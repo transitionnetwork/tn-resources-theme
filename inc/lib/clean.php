@@ -160,12 +160,12 @@ add_action('after_setup_theme', __NAMESPACE__ . '\\remove_extra_markup');
 
 
 // Defer scripts
-if (!is_admin()) {
-	function add_defer_attribute($tag, $handle) {
-    return str_replace(' src', ' defer src', $tag);	
-	}
-	add_filter('script_loader_tag', __NAMESPACE__ . '\\add_defer_attribute', 10, 2);
-}
+// if (!is_admin()) {
+// 	function add_defer_attribute($tag, $handle) {
+//     return str_replace(' src', ' defer src', $tag);	
+// 	}
+// 	add_filter('script_loader_tag', __NAMESPACE__ . '\\add_defer_attribute', 10, 2);
+// }
 
 
 // Clean nav classes

@@ -12,7 +12,6 @@ import saveUserLocation from './modules/save-user-location';
 // Import Font loader
 import WebFont from 'webfontloader';
 
-
 export default {
   init () {
     // JavaScript to be fired on all pages

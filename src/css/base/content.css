@@ -76,7 +76,7 @@ h3,
 
   ul,
   ol {
-    @apply space-y-5 pl-4 lg:pl-8 my-5;
+    @apply pl-4 lg:pl-8 my-5;
 
     li::marker {
       @apply text-brand;

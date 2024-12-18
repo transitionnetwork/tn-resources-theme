@@ -13,8 +13,22 @@
 
   .acf-field input[type="text"],
   .acf-editor-wrap .wp-editor-container,
+  .select2-selection,
   select {
     @apply field p-2;
   }
+}
 
+.acf-field[data-key=field_67617d4176583] {
+  .mce-container.mce-flow-layout-item.mce-first.mce-last.mce-btn-group {
+    .mce-btn:has([type=button]) {
+      &:has(.mce-i-strikethrough),
+      &:has(.mce-i-alignleft),
+      &:has(.mce-i-alignright),
+      &:has(.mce-i-aligncenter),
+      &:has(.mce-i-link) {
+        display: none;
+      }
+    }
+  }
 }

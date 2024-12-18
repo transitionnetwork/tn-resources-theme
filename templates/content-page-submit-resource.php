@@ -1,4 +1,9 @@
-<main class="content container mt-12 space-y-12">
+<?php
+$user = wp_get_current_user(  );
+$locale = get_user_meta( $user->ID, 'country_iso', true); 
+?>
+
+<main class="content container mt-12 space-y-12" data-geo="<?php echo ($locale) ? $locale : null; ?>">
    
   <h1 class="h2 text-center"><?php echo \Tofino\Helpers\title(); ?></h1>
 
