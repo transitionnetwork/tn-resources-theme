@@ -2,7 +2,7 @@
 get_template_part('templates/components/hero');
 if (!get_field('hero_turn_full_screen_hero_off')) {
   get_template_part('templates/partials/more/scroll-down');
-} 
+}
 ?>
 
 <?php get_template_part('templates/partials/gallery'); ?>

@@ -1,9 +1,9 @@
-<?php 
+<?php
 function xinc_write_location_to_user() {
   if (!isset($_POST['value'])) {
     die();
   }
-  
+
   $params = $_POST['value'];
 
   if(!get_user_meta($params['userID'], 'country_iso')) {
