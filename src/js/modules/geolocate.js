@@ -10,7 +10,8 @@ const GeoLocate = () => {
   }
 
   getCloudflareJSON().then(function(arr) {
-    // console.log(arr)
+    console.log(arr)
+    console.log('hello')
 
     let nameElement = document.querySelectorAll('.location-name');
     let regionElement = document.querySelectorAll('.location-region');
