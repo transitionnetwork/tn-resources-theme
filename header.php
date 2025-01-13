@@ -17,13 +17,6 @@ use \Tofino\ThemeOptions\Notifications as n; ?>
 
 <?php n\notification('top'); ?>
 
-<?php
-$locations = get_nav_menu_locations();
-$menu = get_term( $locations['primary_navigation'], 'nav_menu' );
-$menu_items = wp_get_nav_menu_items($menu);
-$this_item = dx_get_current_nav_item();
-?>
-
 <header class="bg-white <?php echo m\menu_sticky(); ?>">
   <nav class="w-full flex flex-wrap justify-between lg:my-0 px-4">
 
