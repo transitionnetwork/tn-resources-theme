@@ -23,7 +23,7 @@ function xinc_get_popular_resources() {
         'excerpt' => xinc_preview_content($post),
       );
 
-      $terms = get_the_terms($post, 'content-type');
+      $terms = get_the_terms($post, 'resource-type');
       if($terms) {
         $terms_output = array();
         foreach($terms as $term) {
