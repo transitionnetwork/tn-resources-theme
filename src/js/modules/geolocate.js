@@ -11,7 +11,6 @@ const GeoLocate = () => {
 
   getCloudflareJSON().then(function(arr) {
     if(arr) {
-
       console.log(arr)
   
       let nameElement = document.querySelectorAll('.location-name');
