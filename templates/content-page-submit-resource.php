@@ -12,7 +12,10 @@ $locale = get_user_meta( $user->ID, 'country_iso', true);
       <?php acfe_form('submit-resource'); ?>
     </div>
   <?php } else { ?>
-    <?php _e('Please <a href="' . get_the_permalink(39) . '">login</a>'); ?>
+    Please
+    <a href="<?php echo do_shortcode('[openid_connect_generic_auth_url]'); ?>">
+     login
+    </a>
   <?php } ?>
 </main>
 
