@@ -21,6 +21,7 @@ function xinc_get_popular_resources() {
         'title' => get_the_title($post),
         'permalink' => get_the_permalink($post),
         'excerpt' => xinc_preview_content($post),
+        'image' => get_field('picture')
       );
 
       $terms = get_the_terms($post, 'resource-type');
