@@ -1,5 +1,7 @@
+<?php get_header(); ?>
+
 <main class="container space-y-8 my-12">
-  <h1 class="h2 mb-2">Resources</h1>
+  <h1 class="h2 mb-2">Search Results for "<?php echo get_query_var('s'); ?>"</h1>
   <?php if(have_posts()) { ?>
     <div class="grid grid-cols-12 gap-6">
       <?php while (have_posts()) : the_post(); ?>
@@ -18,3 +20,5 @@
     </p>
   <?php } ?>
 </main>
+
+<?php get_footer(); ?>

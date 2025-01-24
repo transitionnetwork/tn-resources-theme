@@ -96,3 +96,7 @@ h4,
     @apply list-decimal;
   }
 }
+
+.screen-reader-text {
+  @apply hidden;
+}

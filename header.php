@@ -63,7 +63,8 @@ use \Tofino\ThemeOptions\Notifications as n; ?>
       <div class="hidden md:flex items-center">
         <label for="email" class="hidden text-sm/6 font-medium text-gray-900">Search</label>
         <form class="field-wrapper">
-          <input type="text" name="s" id="search" class="field" placeholder="resources">
+          <input type="text" name="s" id="search" class="field" placeholder="resources" value="<?php echo get_query_var('s'); ?>">
+          <input type="hidden" name="post_type" value="resource" />
           
           <?php echo svg(['sprite' => 'icon-search', 'class' => 'pointer-events-none col-start-1 row-start-1 ml-3 size-5 self-center text-gray-400 sm:size-4']); ?>
         </form>

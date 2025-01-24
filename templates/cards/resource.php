@@ -9,7 +9,7 @@
       <div>
         <?php echo xinc_preview_content($post); ?>
       </div>
-      <a class="btn btn-tertiary block text-center" href="<?php the_permalink(); ?>">Read Guide</a>
+      <a class="btn btn-tertiary block text-center" href="<?php the_permalink(); ?>">Read</a>
     </div>
   </div>
 </div>
