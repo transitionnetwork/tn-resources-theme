@@ -8,7 +8,7 @@ use \Tofino\ThemeOptions\Notifications as n; ?>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <?php wp_head(); ?>
-  
+
   <?php get_template_part('/templates/partials/favicon'); ?>
 
 <body <?php body_class(); ?>>
@@ -26,7 +26,7 @@ use \Tofino\ThemeOptions\Notifications as n; ?>
           Transition Resources
         </a>
       </div>
-  
+
       <div class="fixed inset-0 hidden w-full h-screen bg-white lg:h-auto lg:relative lg:w-auto lg:flex lg:items-center z-20" id="main-menu">
         <?php
         if (has_nav_menu('header_navigation')) :
@@ -64,7 +64,7 @@ use \Tofino\ThemeOptions\Notifications as n; ?>
         <label for="email" class="hidden text-sm/6 font-medium text-gray-900">Search</label>
         <form class="field-wrapper">
           <input type="text" name="s" id="search" class="field" placeholder="resources">
-          
+
           <?php echo svg(['sprite' => 'icon-search', 'class' => 'pointer-events-none col-start-1 row-start-1 ml-3 size-5 self-center text-gray-400 sm:size-4']); ?>
         </form>
       </div>
@@ -79,7 +79,7 @@ use \Tofino\ThemeOptions\Notifications as n; ?>
             <?php echo svg(['sprite' => 'icon-arrow-right', 'class' => 'text-white size-4 rotate-180']); ?>
             <span>Logout</span>
           </a>
-        <?php } ?> 
+        <?php } ?>
       </div>
     </div>
 
