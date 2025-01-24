@@ -8,7 +8,7 @@ use \Tofino\ThemeOptions\Notifications as n; ?>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <?php wp_head(); ?>
-  
+
   <?php get_template_part('/templates/partials/favicon'); ?>
 
 <body <?php body_class(); ?>>
@@ -26,7 +26,7 @@ use \Tofino\ThemeOptions\Notifications as n; ?>
           Transition Resources
         </a>
       </div>
-  
+
       <div class="fixed inset-0 hidden w-full h-screen bg-white lg:h-auto lg:relative lg:w-auto lg:flex lg:items-center z-20" id="main-menu">
         <?php
         if (has_nav_menu('header_navigation')) :
@@ -80,7 +80,7 @@ use \Tofino\ThemeOptions\Notifications as n; ?>
             <?php echo svg(['sprite' => 'icon-arrow-right', 'class' => 'text-white size-4 rotate-180']); ?>
             <span>Logout</span>
           </a>
-        <?php } ?> 
+        <?php } ?>
       </div>
     </div>
 

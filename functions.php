@@ -38,7 +38,7 @@ $custom_includes = [
   "src/custom/helpers.php",
   "src/custom/hooks.php",
   "src/custom/routes.php",
-  "src/custom/acfe.php",  
+  "src/custom/acfe.php",
   "src/custom/ajax/write_location.php",
   "src/custom/ajax/get_popular_resources.php",
 ];
@@ -149,14 +149,14 @@ function dx_get_current_nav_item() {
   if(is_tax()) {
     return get_queried_object()->slug;
   }
-  
+
   if(is_archive()) {
     return get_queried_object()->has_archive;
-  } 
-  
+  }
+
   if(is_object($post)) {
     return $post->post_name;
-  } 
+  }
 
   return 'false';
 }

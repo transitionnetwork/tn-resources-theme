@@ -25,7 +25,7 @@ function remove_widgets() {
   remove_meta_box('dashboard_primary','dashboard','side');
   remove_meta_box('dashboard_secondary','dashboard','side');
   remove_meta_box('dashboard_site_health', 'dashboard', 'normal');
-  remove_meta_box('dashboard_right_now', 'dashboard', 'normal');  
+  remove_meta_box('dashboard_right_now', 'dashboard', 'normal');
 }
 add_action('wp_dashboard_setup', __NAMESPACE__ . '\\remove_widgets', 999);
 
@@ -33,7 +33,7 @@ add_action('wp_dashboard_setup', __NAMESPACE__ . '\\remove_widgets', 999);
 // Remove Howdy from Admin Area
 function change_howdy($wp_admin_bar) {
   $my_account = $wp_admin_bar->get_node('my-account');
-  if($my_account) { 
+  if($my_account) {
     $title   = str_replace('Howdy, ', '', $my_account->title);
     $wp_admin_bar->add_node([
       'id'    => 'my-account',
@@ -106,7 +106,7 @@ function remove_extra_markup () {
   // Remove the REST API lines from the HTML Header
   remove_action('wp_head', 'rest_output_link_wp_head', 10);
   remove_action('wp_head', 'wp_oembed_add_discovery_links', 10);
-  
+
 
   // Remove gunk in header
   remove_action('wp_head', 'rsd_link');
@@ -162,7 +162,7 @@ add_action('after_setup_theme', __NAMESPACE__ . '\\remove_extra_markup');
 // Defer scripts
 // if (!is_admin()) {
 // 	function add_defer_attribute($tag, $handle) {
-//     return str_replace(' src', ' defer src', $tag);	
+//     return str_replace(' src', ' defer src', $tag);
 // 	}
 // 	add_filter('script_loader_tag', __NAMESPACE__ . '\\add_defer_attribute', 10, 2);
 // }
@@ -230,7 +230,7 @@ function remove_body_classes($classes) {
   $classes        = array_diff($classes, $remove_classes);
   return $classes;
 }
-add_filter('body_class', __NAMESPACE__ . '\\remove_body_classes'); 
+add_filter('body_class', __NAMESPACE__ . '\\remove_body_classes');
 
 
 // Remove 'text/css' and 'text/javascript' from enqueued stylesheets and scripts
