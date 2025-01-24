@@ -1,4 +1,4 @@
-<?php 
+<?php
 function xinc_get_popular_resources() {
   if (!isset($_POST['value'])) {
     die();
@@ -14,8 +14,8 @@ function xinc_get_popular_resources() {
   $posts = get_posts($args);
 
   if($posts) {
-    $output = array();  
-    
+    $output = array();
+
     foreach($posts as $key => $post) {
       $output[$key] = array(
         'title' => get_the_title($post),
@@ -23,7 +23,7 @@ function xinc_get_popular_resources() {
         'excerpt' => xinc_preview_content($post),
       );
 
-      $terms = get_the_terms($post, 'content-type');
+      $terms = get_the_terms($post, 'resource-type');
       if($terms) {
         $terms_output = array();
         foreach($terms as $term) {

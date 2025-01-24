@@ -22,7 +22,7 @@ $post_parent = get_post_parent(get_the_ID());
 if (is_front_page()) {
   get_template_part('templates/content-page-front');
 } else if ($post_parent && locate_template('templates/content-parent-page-' . $post_parent->post_name . '.php')) {
-  get_template_part('templates/content-parent-page', $post_parent->post_name); 
+  get_template_part('templates/content-parent-page', $post_parent->post_name);
 } else if (locate_template('templates/content-page-' . $template . '.php') != '') {
   get_template_part('templates/content-page', $template); // e.g. templates/content-page-members.php
 } else {
