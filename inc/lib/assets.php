@@ -22,11 +22,11 @@ namespace Tofino\Assets;
 function styles() {
   $dir = 'dist';
   $file_location = 'css/styles.css';
-  
+
   $main_css = mix($file_location, $dir);
-  
+
   wp_register_style('tofino', $main_css) . '?v=' . filemtime(get_template_directory() . '/' . $dir . '/' . $file_location );
-  
+
   wp_enqueue_style('tofino');
 }
 add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\styles');
@@ -98,7 +98,7 @@ function localize_scripts() {
       'siteURL'        => site_url(),
       'userID'         => wp_get_current_user(  )->ID
     ]);
-  } 
+  }
 }
 add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\localize_scripts');
 
@@ -142,7 +142,7 @@ function correct_image_sizes() {
 
   update_option('medium_large_size_h', 0);
   update_option('medium_large_size_w', 0);
-  
+
   update_option('large_size_h', 0);
   update_option('large_size_w', 1152);
 

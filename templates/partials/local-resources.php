@@ -1,4 +1,4 @@
-<?php 
+<?php
 //THIS NEEDS TO BE AJAX
 $args = array(
   'post_type' => 'resource',
