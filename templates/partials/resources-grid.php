@@ -1,6 +1,8 @@
-<?php $args['post_type'] = 'resource'; ?>
-<?php $args['paged'] = ( get_query_var('paged') ? get_query_var('paged') : 1 ); ?>
+<?php
+$args['post_type'] = 'resource';
+$args['paged'] = ( get_query_var('paged') ? get_query_var('paged') : 1 ); ?>
 
+<?php $is_front_page = is_front_page(); ?>
 <?php $wp_query = new WP_Query($args); ?>
 
 <?php if($wp_query->have_posts()) { ?>
@@ -10,9 +12,10 @@
     <?php endwhile; ?>
 
   </div>
+  
   <?php
   $total_pages = $wp_query->max_num_pages;
-  if ($total_pages > 1) {
+  if ($total_pages > 1 && !$is_front_page) {
     $current_page = max(1, get_query_var('paged'));
     
     // URL base depends on permalink settings.

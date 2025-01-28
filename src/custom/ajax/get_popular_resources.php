@@ -8,7 +8,14 @@ function xinc_get_popular_resources() {
 
   $args = array(
     'post_type' => 'resource',
-    'posts_per_page' => 3
+    'posts_per_page' => 3,
+    'tax_query' => array(
+        array(
+          'taxonomy' => 'country',
+          'field' => 'slug',
+          'terms' => $params
+        )
+      ),
   );
 
   $the_query = new WP_Query($args);

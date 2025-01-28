@@ -5,7 +5,19 @@
 <main class="container space-y-8 my-12">
   <?php if($locale) { ?>
     <h1 class="h2">Local Resources for <?php echo $locale; ?></h2>
-    <?php get_template_part('templates/partials/resources-grid', null, array('posts_per_page'  => 12, 'location' => $locale) ); ?>
+
+    <?php $args = array(
+      'posts_per_page'  => get_option('posts_per_page'),
+      'tax_query' => array(
+        array(
+          'taxonomy' => 'country',
+          'field' => 'slug',
+          'terms' => $location
+        )
+      ),
+    ); ?>
+
+    <?php get_template_part('templates/partials/resources-grid', null, $args ); ?>
   <?php } ?>
 </main>
 
