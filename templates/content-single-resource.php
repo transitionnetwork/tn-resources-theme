@@ -94,7 +94,6 @@
       <?php } ?>
 
       <?php $locale = get_the_terms( $post, 'country' ); ?>
-      <?php var_dump($locale); ?>
 
       <?php $related = get_field('related'); ?>
       <?php if($related) { ?>
