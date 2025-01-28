@@ -11,35 +11,20 @@ function xinc_get_popular_resources() {
     'posts_per_page' => 3
   );
 
-  $posts = get_posts($args);
+  $the_query = new WP_Query($args);
 
-  if($posts) {
+  if($the_query->have_posts()) {
     $output = array();
 
-    foreach($posts as $key => $post) {
-      $output[$key] = array(
-        'title' => get_the_title($post),
-        'permalink' => get_the_permalink($post),
-        'excerpt' => xinc_preview_content($post),
-        'image' => get_field('picture')
-      );
+    $key = 0;
+    while ( $the_query->have_posts() ) : $the_query->the_post();
+      ob_start();
+      get_template_part('templates/cards/resource');
+      $output[$key]['html'] = ob_get_contents();
+      ob_end_clean();
 
-      $terms = get_the_terms($post, 'resource-type');
-      if($terms) {
-        $terms_output = array();
-        foreach($terms as $term) {
-          $terms_output[] = array(
-            'name' => $term->name,
-            'link' => get_term_link($term),
-            'image' => get_field('term_icon', 'term_' . $term->term_id)['sizes']['thumbnail']
-          );
-        }
-
-        $output[$key]['terms'] = $terms_output;
-      } else {
-        $output[$key]['terms'] = false;
-      }
-    }
+      $key ++;
+    endwhile;
   }
 
   echo json_encode($output);

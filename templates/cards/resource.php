@@ -1,6 +1,6 @@
 <div class="col-span-12 md:col-span-4">
   <div class="card">
-    <?php $image = get_field('picture'); ?>
+    <?php $image = get_field('picture', $post); ?>
     <div class="h-0 pt-2/3 relative">
       <?php if($image) { ?>
         <a href="<?php the_permalink(); ?>">
