@@ -10,7 +10,7 @@ $args = array(
 <?php if($posts) { ?>
   <div id="geolocated-content" class="bg-gray-200 py-12">
     <div class="container">
-      <h2 class="h3">Local Resources for <span class="location-name"></span></h2>
+      <h2 class="h3">Resources for <span class="location-name"></span></h2>
 
       <!-- <div>
         Your country is <span class="location-name"></span> in <span class="location-region"></span> in <span class="location-continent"></span>. The main language spoken is <span class="location-lang"></span>. Your IP is <span class="location-ip"></span>

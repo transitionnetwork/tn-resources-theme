@@ -23,12 +23,6 @@
         <div class="space-y-4">
           <?php foreach($files as $file) { ?>
             <div class="card p-4 space-y-4">
-              <?php $description = $file['description']; ?>
-              <?php if($description) { ?>
-                <div>
-                  <?php echo $description; ?>
-                </div>
-              <?php } ?>
               <?php $file_url = wp_get_attachment_url($file['file']); ?>
               <?php if($file_url) { ?>
                 <a href="<?php echo $file_url; ?>" class="flex items-center no-underline" target="_blank">
@@ -37,6 +31,12 @@
                     Download <?php echo wp_check_filetype( $file_url)['ext']; ?> file
                   </span>
                 </a>
+              <?php } ?>
+              <?php $description = $file['description']; ?>
+              <?php if($description) { ?>
+                <div>
+                  <?php echo $description; ?>
+                </div>
               <?php } ?>
             </div>
           <?php } ?>

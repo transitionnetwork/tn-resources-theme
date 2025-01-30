@@ -62,7 +62,7 @@ use \Tofino\ThemeOptions\Notifications as n; ?>
       </div>
       <div class="hidden md:flex items-center">
         <label for="email" class="hidden text-sm/6 font-medium text-gray-900">Search</label>
-        <form class="field-wrapper">
+        <form class="field-wrapper" action="<?php echo home_url(); ?>">
           <input type="text" name="s" id="search" class="field" placeholder="resources" value="<?php echo get_query_var('s'); ?>">
           <input type="hidden" name="post_type" value="resource" />
           

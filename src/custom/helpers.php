@@ -9,9 +9,9 @@ function xinc_convert_youtube_url($string) {
   );
 }
 
-function xinc_preview_content($post = null, $words = 20) {
+function xinc_preview_content($post = null, $words = 30) {
   if(get_post_field('post_content', $post)) {
-    $content = strip_tags(get_post_field('post_content', $post) . '[...]');
+    $content = strip_tags(get_post_field('post_content', $post)) . '&hellip;';
     return wp_trim_words($content, $words);
   }
 
