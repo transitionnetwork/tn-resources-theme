@@ -37,6 +37,7 @@ $custom_includes = [
   "src/custom/register-types.php",
   "src/custom/helpers.php",
   "src/custom/hooks.php",
+  "src/custom/search-hook.php",
   "src/custom/routes.php",
   "src/custom/acfe.php",
   "src/custom/ajax/write_location.php",

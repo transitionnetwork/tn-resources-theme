@@ -15,6 +15,7 @@
 @import 'components/container';
 @import 'components/forms';
 @import 'components/pagination';
+@import 'components/spinner';
 
 @import 'components/buttons';
 @import 'components/acf-forms';

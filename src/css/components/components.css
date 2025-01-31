@@ -4,10 +4,21 @@
   }
   
   .field {
-    @apply col-start-1 row-start-1 block w-full rounded-md bg-white py-2 pl-10 pr-3 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-brand sm:pl-9 sm:text-sm/6
+    @apply col-start-1 row-start-1 block w-full rounded-md bg-white py-2 pl-10 pr-3 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-400 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-brand sm:pl-9 sm:text-sm/6
   }
 
   .card {
     @apply bg-white text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 rounded-md overflow-hidden;
   }
 }
+
+.field-wrapper.select {
+  label {
+    @apply block text-sm/6 text-gray-900;
+  }
+  
+  select {
+    @apply col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-1.5 pr-8 pl-3 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-brand sm:text-sm/6;
+  }
+}
+

@@ -66,6 +66,8 @@ const GeoLocate = () => {
         success: function (response) {
 
           console.log(response)
+          let spinner = document.getElementById('loader-container')
+          spinner.classList.add('hidden')
           
           response.forEach(item => {
             let content = ''
