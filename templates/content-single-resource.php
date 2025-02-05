@@ -34,7 +34,7 @@
               <?php } ?>
               <?php $description = $file['description']; ?>
               <?php if($description) { ?>
-                <div>
+                <div class="content">
                   <?php echo $description; ?>
                 </div>
               <?php } ?>

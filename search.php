@@ -19,6 +19,12 @@
       There are no resources found.
     </p>
   <?php } ?>
+
+  <div class="max-w-3xl">
+    <h2>Advanced Search</h2>
+
+    <?php get_template_part('templates/partials/search-form-advanced'); ?>
+  </div>
 </main>
 
 <?php get_footer(); ?>
