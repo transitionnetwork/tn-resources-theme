@@ -31,6 +31,7 @@
                     Download <?php echo wp_check_filetype( $file_url)['ext']; ?> file
                   </span>
                 </a>
+                <hr/>
               <?php } ?>
               <?php $description = $file['description']; ?>
               <?php if($description) { ?>
