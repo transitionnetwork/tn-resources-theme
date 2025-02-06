@@ -10,7 +10,7 @@
         <?php } ?>
       </a>
     </div>
-    <div class="p-3 space-y-2">
+    <div class="p-6 space-y-3">
       <?php get_template_part('templates/partials/content-types'); ?>
       <h3 class="h4"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
       <div>

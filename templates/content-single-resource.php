@@ -35,10 +35,26 @@
               <?php } ?>
               <?php $description = $file['description']; ?>
               <?php if($description) { ?>
-                <div class="accordion divide-y">
-                  <div class="accordion-header p-4 flex justify-between items-center">
-                    <h4><a class="btn-accordion">Read More</a></h4>
-                    <div class="btn-accordion transition-all duration-300"><?php echo svg('chevron-down'); ?></div>
+                <div class="accordion">
+                  <div class="accordion-header p-4">
+                    <div class="content">
+                      <?php echo wp_trim_words(strip_tags($description), 20); ?>
+                    </div>
+                    <?php if(substr_count(strip_tags($description), ' ') > 19) { ?>
+                      <div class="flex pt-4">
+                        <div>
+                          <a class="font-bold btn btn-secondary space-x-2">
+                            <span>Read More</span>
+                            <span class="transition-all duration-300">
+                              <?php echo svg(array(
+                                'sprite' => 'chevron-down',
+                                'class' =>  'w-6 h-6'
+                              )); ?>
+                            </span>
+                          </a>
+                        </div>
+                      </div>
+                    <?php } ?>
                   </div>
                   <div class="accordion-detail h-0 overflow-hidden transition-all duration-300">
                     <div class="p-6 content">
