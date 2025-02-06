@@ -4,6 +4,8 @@ import Alert from './modules/alert';
 // Menu
 import Menu from './modules/menu';
 
+import Accordion from './modules/accordion';
+
 //Geolocation
 import GeoLocate from './modules/geolocate';
 
@@ -35,6 +37,11 @@ export default {
     // Menu
     if (document.getElementById('menu-primary-navigation')) {
       Menu();
+    }
+
+    // Accordion
+    if (document.getElementsByClassName('accordion')) {
+      Accordion();
     }
 
     if (document.getElementById('geolocated-content')) {

@@ -22,10 +22,10 @@
       <?php if($files) { ?>
         <div class="space-y-4">
           <?php foreach($files as $file) { ?>
-            <div class="card p-4 space-y-4">
+            <div class="card p-4">
               <?php $file_url = wp_get_attachment_url($file['file']); ?>
               <?php if($file_url) { ?>
-                <a href="<?php echo $file_url; ?>" class="flex items-center no-underline" target="_blank">
+                <a href="<?php echo $file_url; ?>" class="flex items-center no-underline p-4" target="_blank">
                   <?php echo svg(['sprite' => 'document', 'class' => 'w-8 h-8']); ?>
                   <span>
                     Download <?php echo wp_check_filetype( $file_url)['ext']; ?> file
@@ -35,8 +35,16 @@
               <?php } ?>
               <?php $description = $file['description']; ?>
               <?php if($description) { ?>
-                <div class="content">
-                  <?php echo $description; ?>
+                <div class="accordion divide-y">
+                  <div class="accordion-header p-4 flex justify-between items-center">
+                    <h4><a class="btn-accordion">Read More</a></h4>
+                    <div class="btn-accordion transition-all duration-300"><?php echo svg('chevron-down'); ?></div>
+                  </div>
+                  <div class="accordion-detail h-0 overflow-hidden transition-all duration-300">
+                    <div class="p-6 content">
+                      <?php echo $description; ?>
+                    </div>
+                  </div>
                 </div>
               <?php } ?>
             </div>

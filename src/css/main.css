@@ -16,6 +16,7 @@
 @import 'components/forms';
 @import 'components/pagination';
 @import 'components/spinner';
+@import 'components/accordion';
 
 @import 'components/buttons';
 @import 'components/acf-forms';

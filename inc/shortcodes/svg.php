@@ -34,7 +34,7 @@ function svg($atts) {
     }
 
     if (file_exists($file)) {
-      return file_get_contents($file);
+      return wp_remote_get($file);
     }
   }
 

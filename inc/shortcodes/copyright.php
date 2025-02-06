@@ -6,6 +6,6 @@
  * @return string HTML output copyright string.
  */
 function copyright() {
-  return '&copy; ' . date('Y');
+  return '&copy; ' . gmdate('Y');
 }
 add_shortcode('copyright', 'copyright');
