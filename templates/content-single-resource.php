@@ -90,17 +90,6 @@
           <?php echo '<em>License: ' . $license_map[$license] . '</em>';  ?>
         </div>
       <?php } ?>
-      
-      <?php $identify_author = get_field('author_select'); ?>
-      <?php if($identify_author) { ?>
-        <?php $author_map = array(
-          1 => 'I wrote this',
-          2 => 'Someone else wrote this'
-        ); ?>
-        <div>
-          <?php echo $author_map[$identify_author] ?>
-        </div>
-      <?php } ?>
 
       <?php $authors = get_field('authors'); ?>
       <?php if($authors) { ?>
