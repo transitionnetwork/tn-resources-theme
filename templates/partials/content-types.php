@@ -28,8 +28,10 @@
     <?php foreach($countries as $country) { ?>
       <div>
         <a class="no-underline flex items-center space-x-1 text-sm" href="<?php echo get_term_link($country); ?>">
-          <?php if(get_field('term_icon', 'term_' .   $term->term_id)) { ?>
+          <?php if($country->slug !== 'global') { ?>
             <img src="https://flagsapi.com/<?php echo strtoupper($country->slug); ?>/flat/64.png" class="h-3 w-auto">
+          <?php } else { ?>
+            <img src="<?php echo get_field('term_icon', 'term_' .   $country->term_id)['sizes']['thumbnail']; ?>" class="h-3 w-auto">
           <?php } ?>
           <span><?php echo $country->name; ?></span>
         </a>
