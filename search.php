@@ -2,7 +2,20 @@
 
 <main class="container space-y-12 my-12">
   <div class="space-y-8">
-    <h1 class="h2 mb-2">Search Results for "<?php echo get_query_var('s'); ?>"</h1>
+    <h1 class="h2 mb-2">
+      <?php echo 'Search Results for &ldquo;' . get_query_var('s'). '&rdquo;'; ?>
+      <?php $project_type = get_query_var('project-type');
+      if($project_type ) {
+        $project_type_term = get_term_by('slug', $project_type, 'project-type');
+        echo ', Project Type: ' . $project_type_term->name; ?>
+      <?php } ?>
+
+      <?php $resource_type = get_query_var('resource-type');
+      if($resource_type ) {
+        $resource_type_term = get_term_by('slug', $resource_type, 'resource-type');
+        echo ', Resource Type: ' . $resource_type_term->name; ?>
+      <?php } ?>
+    </h1>
     <?php if(have_posts()) { ?>
       <div class="grid grid-cols-12 gap-6">
         <?php while (have_posts()) : the_post(); ?>
