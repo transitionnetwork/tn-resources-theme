@@ -20,21 +20,29 @@ function xinc_get_popular_resources() {
 
   $the_query = new WP_Query($args);
 
+  if(!$the_query->have_posts()) {
+    $args['tax_query'][0]['terms'] = array('location' => 'global');
+    $the_query = new WP_Query($args);
+  }
+
   if($the_query->have_posts()) {
-    $output = array();
+    $resources = array();
 
     $key = 0;
     while ( $the_query->have_posts() ) : $the_query->the_post();
       ob_start();
       get_template_part('templates/cards/resource');
-      $output[$key]['html'] = ob_get_contents();
+      $resources[$key]['html'] = ob_get_contents();
       ob_end_clean();
 
       $key ++;
     endwhile;
   }
 
-  echo json_encode($output);
+  echo json_encode(array(
+    'resources' => $resources,
+    'country' => $args['tax_query'][0]['terms']
+  ));
   die();
 }
 

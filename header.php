@@ -53,14 +53,14 @@ use \Tofino\ThemeOptions\Notifications as n; ?>
       <span class="sr-only"><?php _e('Toggle Navigation Button', 'tofino'); ?></span>
     </button>
 
-    <div class="flex space-x-2 w-full lg:w-auto py-2">
-      <div class="flex items-center">
+    <div class="flex w-full lg:w-auto flex-wrap my-1">
+      <div class="flex items-center mr-2 my-1">
         <a href="<?php echo get_the_permalink( 37 ); ?>" class="btn btn-primary space-x-1">
           <?php echo svg(['sprite' => 'icon-plus', 'class' => 'text-white w-5 h-5']); ?>
           <span>Submit Resource</span>
         </a>
       </div>
-      <div class="hidden md:flex items-center">
+      <div class="hidden md:flex items-center mr-2 my-1">
         <label for="email" class="hidden text-sm/6 font-medium text-gray-900">Search</label>
         <form class="field-wrapper" action="<?php echo home_url(); ?>">
           <input type="text" name="s" id="search" class="field" placeholder="resources" value="<?php echo get_query_var('s'); ?>">
@@ -69,7 +69,7 @@ use \Tofino\ThemeOptions\Notifications as n; ?>
           <?php echo svg(['sprite' => 'icon-search', 'class' => 'pointer-events-none col-start-1 row-start-1 ml-3 size-5 self-center text-gray-400 sm:size-4']); ?>
         </form>
       </div>
-      <div class="flex items-center">
+      <div class="flex items-center my-1">
         <?php if(!is_user_logged_in(  )) { ?>
           <a href="<?php echo do_shortcode('[openid_connect_generic_auth_url]'); ?>" class="btn btn-secondary space-x-1">
             <?php echo svg(['sprite' => 'icon-arrow-right', 'class' => 'text-white size-4']); ?>

@@ -10,7 +10,7 @@ $args = array(
 <?php if($posts) { ?>
   <div id="geolocated-content" class="bg-gray-200 py-12">
     <div class="container">
-      <h2 class="h3">Resources for <span class="location-name"></span></h2>
+      <h2 class="h3"><span class="location-name"></span></h2>
 
       <!-- <div>
         Your country is <span class="location-name"></span> in <span class="location-region"></span> in <span class="location-continent"></span>. The main language spoken is <span class="location-lang"></span>. Your IP is <span class="location-ip"></span>
@@ -24,7 +24,7 @@ $args = array(
       </div>
 
       <a href="" class="location-link flex space-x-2 items-center justify-center no-underline hover:underline">
-        <div>View all resources for  <span class="location-name"></span></div>
+        <div><span class="location-name"></span></div>
         <span>
           <?php echo svg(['sprite' => 'icon-arrow-right', 'class' => 'text-black size-4']); ?>
         </span>

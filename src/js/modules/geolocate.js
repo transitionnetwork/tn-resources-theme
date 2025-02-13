@@ -13,16 +13,11 @@ const GeoLocate = () => {
     if(arr) {
       console.log(arr)
   
-      let nameElement = document.querySelectorAll('.location-name');
       let regionElement = document.querySelectorAll('.location-region');
       let continentElement = document.querySelectorAll('.location-continent');
       let languageElement = document.querySelectorAll('.location-lang');
       let ipElement = document.querySelectorAll('.location-ip');
       let locationLink = document.querySelectorAll('.location-link');
-  
-      nameElement.forEach(el => {
-        el.append(lookup.byIso(arr['loc'])['country']);
-      });
       
       regionElement.forEach(el => {
         el.append(lookup.byIso(arr['loc'])['region']);
@@ -48,8 +43,6 @@ const GeoLocate = () => {
       locationLink.forEach(el => {
         el.setAttribute("href", tofinoJS.siteURL + "/location/" + arr['loc'].toLowerCase());
       });
-  
-      let localResourcesGrid = document.getElementById('local-resources-grid')
       
       //ajax call to return the relevant resources to the location
       $.ajax({
@@ -68,12 +61,28 @@ const GeoLocate = () => {
           console.log(response)
           let spinner = document.getElementById('loader-container')
           spinner.classList.add('hidden')
+
+          let localResourcesGrid = document.getElementById('local-resources-grid')
           
-          response.forEach(item => {
+          response.resources.forEach(item => {
             let content = ''
             content += item.html
   
             localResourcesGrid.innerHTML += content;
+          });
+
+          let nameElement = document.querySelectorAll('.location-name')
+          
+          let label
+
+          if(response.country.location === 'global') {
+            label = 'Worldwide Resources'
+          } else {
+            label = 'Resources from ' + lookup.byIso(arr['loc'])['country']
+          }
+
+          nameElement.forEach(el => {
+            el.append(label);
           });
         },
         error: function (jqxhr, status, exception) {
