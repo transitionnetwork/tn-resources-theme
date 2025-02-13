@@ -82,7 +82,7 @@
       <?php $license = get_field('license'); ?>
       <?php if($license) { ?>
         <?php $license_map = array(
-          1 => 'CC-BY',
+          1 => '<a href="https://creativecommons.org/licenses/by/4.0/deed.en" target="_blank">CC-BY</a>',
           2 => 'CC-BY-NC',
           3 => 'All rights reserved'
         ); ?>

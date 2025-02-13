@@ -25,7 +25,7 @@ function styles() {
 
   $main_css = mix($file_location, $dir);
 
-  wp_register_style('tofino', $main_css) . '?v=' . filemtime(get_template_directory() . '/' . $dir . '/' . $file_location );
+  wp_register_style('tofino', $main_css, array(), filemtime(get_template_directory() . '/' . $dir . '/' . $file_location));
 
   wp_enqueue_style('tofino');
 }

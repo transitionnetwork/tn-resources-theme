@@ -4,7 +4,7 @@
 
 <main class="container space-y-8 my-12">
   <?php if($locale) { ?>
-    <h1 class="h2">Local Resources for <?php echo $locale; ?></h2>
+    <h1 class="h2">Resources from <?php echo $locale; ?></h2>
 
     <?php $args = array(
       'posts_per_page'  => get_option('posts_per_page'),
