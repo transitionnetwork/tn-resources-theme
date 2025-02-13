@@ -11,6 +11,7 @@
 @import 'layouts/nav';
 @import 'layouts/footer';
 
+@import 'components/fonts';
 @import 'components/embed';
 @import 'components/container';
 @import 'components/forms';

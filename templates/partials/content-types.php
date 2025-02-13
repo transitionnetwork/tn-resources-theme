@@ -1,4 +1,4 @@
-<div class="flex items-center flex-wrap">
+<div class="flex items-center flex-wrap leading-loose">
   <?php $terms = get_the_terms($post, 'resource-type'); ?>
   <?php foreach($terms as $term) { ?>
     <div class="pr-2">

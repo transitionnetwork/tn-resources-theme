@@ -1,4 +1,4 @@
-<form class="space-y-4" action="<?php echo home_url(); ?>">
+<form class="space-y-6" action="<?php echo home_url(); ?>">
   <input type="hidden" name="post_type" value="resource" />
   
   <div class="field-wrapper w-full">
