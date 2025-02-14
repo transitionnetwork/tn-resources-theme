@@ -1,6 +1,8 @@
 <?php $terms = get_terms(array(
   'taxonomy' => 'project-type',
-  'hide_empty' => false
+  'hide_empty' => false,
+  'orderby' => 'count',
+  'order' => 'DESC'
 )); ?>
 
 

@@ -107,6 +107,22 @@
         </div>
       <?php } ?>
 
+      <?php $image_sources = get_field('source_name'); ?>
+      <?php if($image_sources) { ?>
+        <div class="flex space-x-2">
+          <span>Image by</span>
+          <?php foreach($image_sources as $source) { ?>
+            <?php if($source['source_link']) { ?>
+              <a href="<?php echo $source['source_link']; ?>" target="_blank">
+            <?php } ?>
+              <?php echo $source['source_name']; ?>
+            <?php if($source['source_link']) { ?>
+              </a>
+            <?php } ?>
+          <?php } ?>
+        </div>
+      <?php } ?>
+
       <?php $locale = get_the_terms( $post, 'country' ); ?>
 
       <?php $related = get_field('related'); ?>

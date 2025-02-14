@@ -4,7 +4,8 @@
       <?php $image = get_field('term_icon', 'term_' . $args->term_id); ?>
       <?php echo wp_get_attachment_image( $image['id'], 'thumbnail', null, array('class' => 'max-h-8 w-auto mx-auto block')); ?>
       <span class="block">
-        <?php echo $args->name; ?>
+        <?php echo $args->name; ?><br/>
+        <em class="text-sm">(<?php echo $args->count; ?>)</em>
       </span>
     </a>
   </div>
