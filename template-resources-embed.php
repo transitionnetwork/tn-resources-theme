@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Xinc Events Iframe Page
+ * Template Name: Xinc Resources Iframe Page
  */
 
 get_header('bare');
