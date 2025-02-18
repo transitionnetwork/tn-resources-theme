@@ -41,7 +41,7 @@ $custom_includes = [
   "src/custom/routes.php",
   "src/custom/acfe.php",
   "src/custom/ajax/write_location.php",
-  "src/custom/ajax/get_popular_resources.php",
+  "src/custom/ajax/get_local_resources.php",
 ];
 
 $tofino_includes = array_merge($tofino_includes, $custom_includes);

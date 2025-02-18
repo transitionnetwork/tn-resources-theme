@@ -50,7 +50,7 @@ const GeoLocate = () => {
         type: 'POST',
         cache: false,
         data: {
-          action: 'getPopularResources',
+          action: 'getLocalResources',
           value: {
             location: arr['loc'].toLowerCase()
           }

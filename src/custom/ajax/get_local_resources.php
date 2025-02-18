@@ -1,5 +1,5 @@
 <?php
-function xinc_get_popular_resources() {
+function xinc_get_local_resources() {
   if (!isset($_POST['value'])) {
     die();
   }
@@ -46,5 +46,5 @@ function xinc_get_popular_resources() {
   die();
 }
 
-add_action('wp_ajax_nopriv_getPopularResources', 'xinc_get_popular_resources');
-add_action('wp_ajax_getPopularResources', 'xinc_get_popular_resources');
+add_action('wp_ajax_nopriv_getLocalResources', 'xinc_get_local_resources');
+add_action('wp_ajax_getLocalResources', 'xinc_get_local_resources');

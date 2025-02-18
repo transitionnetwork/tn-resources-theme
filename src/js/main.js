@@ -7,7 +7,7 @@ import Menu from './modules/menu';
 import Accordion from './modules/accordion';
 
 //Geolocation
-import GeoLocate from './modules/geolocate';
+import getLocalResources from './modules/get-local-resources';
 
 import saveUserLocation from './modules/save-user-location';
 
@@ -45,7 +45,7 @@ export default {
     }
 
     if (document.getElementById('geolocated-content')) {
-      GeoLocate();
+      getLocalResources();
     }
     
     if (document.getElementById('save-user-location')) {
