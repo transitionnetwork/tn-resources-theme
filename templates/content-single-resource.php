@@ -83,7 +83,7 @@
       <?php if($license) { ?>
         <?php $license_map = array(
           1 => '<a href="https://creativecommons.org/licenses/by/4.0/deed.en" target="_blank">CC-BY</a>',
-          2 => 'CC-BY-NC',
+          2 => '<a href="https://creativecommons.org/licenses/by/4.0/deed.en" target="_blank">CC-BY-NC</a>',
           3 => 'All rights reserved'
         ); ?>
         <div>
@@ -107,7 +107,7 @@
         </div>
       <?php } ?>
 
-      <?php $image_sources = get_field('source_name'); ?>
+      <?php $image_sources = get_field('image_source'); ?>
       <?php if($image_sources) { ?>
         <div class="flex space-x-2">
           <span>Image by</span>
