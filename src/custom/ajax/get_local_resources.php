@@ -41,7 +41,8 @@ function xinc_get_local_resources() {
 
   echo json_encode(array(
     'resources' => $resources,
-    'country' => $args['tax_query'][0]['terms']
+    'country' => $args['tax_query'][0]['terms'],
+    'target' => $params['target']
   ));
   die();
 }

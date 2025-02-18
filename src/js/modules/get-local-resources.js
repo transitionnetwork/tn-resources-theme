@@ -43,6 +43,8 @@ const GeoLocate = () => {
       locationLink.forEach(el => {
         el.setAttribute("href", tofinoJS.siteURL + "/location/" + arr['loc'].toLowerCase());
       });
+
+      let getTarget = document.getElementById('geolocated-content').dataset.target;
       
       //ajax call to return the relevant resources to the location
       $.ajax({
@@ -52,7 +54,8 @@ const GeoLocate = () => {
         data: {
           action: 'getLocalResources',
           value: {
-            location: arr['loc'].toLowerCase()
+            location: arr['loc'].toLowerCase(),
+            target: getTarget
           }
         },
         dataType: 'json',
@@ -84,6 +87,17 @@ const GeoLocate = () => {
           nameElement.forEach(el => {
             el.append(label);
           });
+
+          //add target to links for iframes
+          if(response.target) {
+            let links = document.getElementById('local-resources-grid').getElementsByTagName('a');
+
+            links = Array.from(links);
+
+            links.forEach(item => {
+              item.setAttribute('target', response.target)
+            })
+          }
         },
         error: function (jqxhr, status, exception) {
           console.log('JQXHR:', jqxhr);
