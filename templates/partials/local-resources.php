@@ -1,4 +1,4 @@
-<div id="geolocated-content" class="py-12" data-target="<?php echo $_GET['target']; ?>">
+<div id="geolocated-content" class="py-12">
   <div class="container">
     <h2 class="h3"><span class="location-name"></span></h2>
 
