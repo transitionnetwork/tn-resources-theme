@@ -1,4 +1,3 @@
-<?php get_header(); ?>
 <?php $location = get_query_var('location'); ?>
 <?php $locale = Locale::getDisplayRegion('-' . $location, 'en'); ?>
 
@@ -8,13 +7,13 @@
     <?php if($locale) { ?>
       <h1 class="h2">Resources from <?php echo $locale; ?></h2>
     <?php } ?>
-
+    
     <?php if($location === 'global') { ?>
       <h1 class="h2">Global Resources</h2>
     <?php } ?>
 
     <?php $args = array(
-      'posts_per_page'  => get_option('posts_per_page'),
+      'posts_per_page'  => 3,
       'tax_query' => array(
         array(
           'taxonomy' => 'country',
@@ -25,7 +24,8 @@
     ); ?>
 
     <?php get_template_part('templates/partials/resources-grid', null, $args ); ?>
+
+    <?php get_template_part('templates/partials/embed-resources-nav'); ?>
+
   <?php } ?>
 </main>
-
-<?php get_footer(); ?>
