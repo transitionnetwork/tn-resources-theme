@@ -1,7 +1,7 @@
 <div class="py-12">
   <div class="container">
 
-    <h2 class="h3">Resources</h2>
+    <h1 class="h3">Resources</h1>
     <?php get_template_part('templates/partials/resources-grid', null, array('posts_per_page'  => 3) ); ?>
     
     <?php get_template_part('templates/partials/embed-resources-nav'); ?>

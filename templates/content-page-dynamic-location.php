@@ -6,11 +6,11 @@
   <?php if($location) { ?>
 
     <?php if($locale) { ?>
-      <h1 class="h2">Resources from <?php echo $locale; ?></h2>
+      <h1 class="h3">Resources from <?php echo $locale; ?></h1>
     <?php } ?>
 
     <?php if($location === 'global') { ?>
-      <h1 class="h2">Global Resources</h2>
+      <h1 class="h3">Global Resources</h1>
     <?php } ?>
 
     <?php $args = array(

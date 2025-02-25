@@ -1,6 +1,6 @@
 <div id="geolocated-content" class="py-12" data-target="<?php echo $_GET['target']; ?>">
   <div class="container">
-    <h2 class="h3"><span class="location-name"></span></h2>
+    <h1 class="h3"><span class="location-name"></span></h1>
 
     <div id="loader-container" class="flex items-center justify-center p-6">
       <div class="loader"></div>

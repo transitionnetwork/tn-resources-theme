@@ -1,7 +1,7 @@
 <main class="container space-y-8 my-12">
 
   <?php $category = get_term_by( 'slug', get_query_var('project-type'), 'project-type'); ?>
-  <h1 class="h2"><?php echo $category->name; ?> Resources</h2>
+  <h1 class="h3"><?php echo $category->name; ?> Resources</h1>
 
   <?php $args = array(
     'posts_per_page'  => 3,
