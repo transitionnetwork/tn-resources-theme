@@ -13,7 +13,7 @@
       </div>
   
       <?php if(get_post_field('post_content', $post)) { ?>
-        <div class="content mt-8">
+        <div class="content mt-8 child-links-blank">
           <?php the_content(); ?>
         </div>
       <?php } ?>
@@ -57,7 +57,7 @@
                     <?php } ?>
                   </div>
                   <div class="accordion-detail h-0 overflow-hidden transition-all duration-300">
-                    <div class="p-6 content">
+                    <div class="p-6 content child-links-blank">
                       <?php echo $description; ?>
                     </div>
                   </div>

@@ -11,6 +11,8 @@ import getLocalResources from './modules/get-local-resources';
 
 import saveUserLocation from './modules/save-user-location';
 
+import setLinkTarget from './modules/set-link-target';
+
 // Import Font loader
 import WebFont from 'webfontloader';
 
@@ -42,6 +44,11 @@ export default {
     // Accordion
     if (document.getElementsByClassName('accordion')) {
       Accordion();
+    }
+
+    // Set Link Target
+    if (document.getElementsByClassName('child-links-blank')) {
+      setLinkTarget();
     }
 
     if (document.getElementById('geolocated-content')) {
