@@ -10,14 +10,13 @@
     </div>
 
     <?php if(has_nav_menu('header_navigation')) { ?>
-      <?php $menu_name = wp_get_nav_menu_name('header_navigation'); ?>
-      <?php $nav_items = wp_get_nav_menu_items($menu_name); ?>
+      <?php $nav_items = xinc_get_embed_nav_items(); ?>
 
       <form class="flex justify-center my-6">
         <select name="" id="" onChange="window.open(this.value, '_blank')">
           <option value="">Main Menu</option>
-          <?php foreach($nav_items as $item) { ?>
-            <option value="<?php echo $item->url; ?>"><?php echo $item->title; ?></option>
+          <?php foreach($nav_items as $key => $item) { ?>
+            <option value="<?php echo home_url($key); ?>"><?php echo $item; ?></option>
           <?php } ?>
         </select>
       </form>

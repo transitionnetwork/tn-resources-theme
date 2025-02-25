@@ -17,3 +17,12 @@ function xinc_preview_content($post = null, $words = 30) {
 
   return;
 }
+
+function xinc_get_embed_nav_items() {
+  $nav_items = array(
+    'advanced-search' => 'Advanced Search',
+    'resources' => 'Resources'
+  );
+
+  return $nav_items;
+}

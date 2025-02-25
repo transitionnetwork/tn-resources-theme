@@ -144,7 +144,7 @@ function wpdocs_theme_setup() {
   add_image_size( 'cover', 3024 ); // 300 pixels wide (and unlimited height)
 }
 
-function dx_get_current_nav_item() {
+function xinc_get_current_nav_item() {
   global $post;
 
   if(is_tax()) {
