@@ -2,8 +2,8 @@
   <input type="hidden" name="post_type" value="resource" />
   
   <div class="field-wrapper w-full">
-    <label for="search">Search</label>
-    <input type="text" name="s" id="search" class="field w-full" placeholder="Search resources..." value="<?php echo get_query_var('s'); ?>">
+    <label for="advanced-search">Search</label>
+    <input type="text" name="s" id="advanced-search" class="field w-full" placeholder="Search resources..." value="<?php echo get_query_var('s'); ?>">
     <?php echo svg(['sprite' => 'icon-search', 'class' => 'pointer-events-none col-start-1 row-start-1 ml-3 size-5 self-center text-gray-400 sm:size-4']); ?> 
   </div>
 
