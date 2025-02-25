@@ -1,10 +1,12 @@
 <form class="space-y-6" action="<?php echo home_url(); ?>">
   <input type="hidden" name="post_type" value="resource" />
   
-  <div class="field-wrapper w-full">
-    <label for="advanced-search">Search</label>
-    <input type="text" name="s" id="advanced-search" class="field w-full" placeholder="Search resources..." value="<?php echo get_query_var('s'); ?>">
-    <?php echo svg(['sprite' => 'icon-search', 'class' => 'pointer-events-none col-start-1 row-start-1 ml-3 size-5 self-center text-gray-400 sm:size-4']); ?> 
+  <div class="field-wrapper w-full space-y-1">
+    <label for="advanced-search" class="text-sm">Search</label>
+    <div class="grid">
+      <input type="text" name="s" id="advanced-search" class="field w-full" placeholder="Search resources..." value="<?php echo get_query_var('s'); ?>">
+      <?php echo svg(['sprite' => 'icon-search', 'class' => 'pointer-events-none col-start-1 row-start-1 ml-3 size-5 self-center text-gray-400 sm:size-4']); ?> 
+    </div>
   </div>
 
   
