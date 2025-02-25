@@ -15,7 +15,7 @@
         </div>
         <form class="flex space-x-2">
           <div class="field-wrapper w-full">
-            <label for="search" class="hidden text-sm/6 font-medium text-gray-900">Search</label>
+            <label for="s" class="hidden text-sm/6 font-medium text-gray-900">Search</label>
             <input type="text" name="s" id="search" class="field w-full" placeholder="Search resources..." value="<?php echo get_query_var('s'); ?>">
             <input type="hidden" name="post_type" value="resource" />
             
