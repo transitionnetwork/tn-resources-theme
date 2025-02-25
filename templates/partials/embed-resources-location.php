@@ -27,5 +27,12 @@
 
     <?php get_template_part('templates/partials/embed-resources-nav'); ?>
 
+    <a href="<?php echo home_url('resources'); ?>" class="location-link flex space-x-2 items-center justify-center no-underline hover:underline" target="_blank">
+      <div>All Resources</div>
+      <span>
+        <?php echo svg(['sprite' => 'icon-arrow-right', 'class' => 'text-black size-4']); ?>
+      </span>
+    </a>
+
   <?php } ?>
 </main>
