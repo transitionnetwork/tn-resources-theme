@@ -27,21 +27,23 @@ function foo_my_query_vars($vars){
 }
 
 add_action( 'template_include', function( $template ) {
-  if ( (get_query_var( 'location' ) === '' && get_query_var( 'project-type' ) === '') || is_search()) {
-      return $template;
-  }
-
   global $wp;
   $request = home_url( $wp->request );
+
+  //dynamic page templates
   
-  if(str_contains( $request, 'embed-resources/project-type' )) {
+  if(str_contains( $request, 'embed-resources/project-type/' )) {
     return get_template_directory() . '/templates/content-page-embed-project-type.php';
   }
 
-  if(str_contains( $request, 'embed-resources/location' )) {
+  if(str_contains( $request, 'embed-resources/location/' )) {
     return get_template_directory() . '/templates/content-page-embed-location.php';
   }
+  
+  if(str_contains( $request, '/location/' )) {
+    return get_template_directory() . '/templates/content-page-dynamic-location.php';
+  }
 
-  return get_template_directory() . '/templates/content-page-dynamic-location.php';
+  return $template;
 
 } );
