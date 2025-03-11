@@ -7,9 +7,12 @@ use \Tofino\ThemeOptions\Notifications as n; ?>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <?php wp_head(); ?>
-
   <?php get_template_part('/templates/partials/favicon'); ?>
+  
+  <?php wp_head(); ?>
+  <?php wp_oembed_add_discovery_links(); ?>
+
+</head>
 
 <body <?php body_class(); ?>>
 
