@@ -79,7 +79,7 @@ use \Tofino\ThemeOptions\Notifications as n; ?>
             <span>Login with Transition ID</span>
           </a>
         <?php } else { ?>
-          <a href="<?php echo wp_logout_url(); ?>" class="btn btn-secondary space-x-2">
+          <a href="<?php echo wp_logout_url(); ?>" class="btn btn-brand-v3 space-x-2">
             <?php echo svg(['sprite' => 'icon-arrow-right', 'class' => 'text-white size-4 rotate-180']); ?>
             <span>Logout</span>
           </a>
