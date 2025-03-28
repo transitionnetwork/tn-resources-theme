@@ -19,12 +19,14 @@
           <?php } ?>
         <?php } ?>
       </div>
-      <a href="<?php echo home_url('project-types'); ?>" class="no-underline hover:underline text-center flex space-x-2 items-center justify-center text-white">
-        <span>View all categories</span>
-        <span>
-          <?php echo svg(['sprite' => 'icon-arrow-right', 'class' => 'text-white size-4']); ?>
-        </span>
-      </a>
+      <div class="text-center">
+        <a href="<?php echo home_url('project-types'); ?>" class="text-center inline-flex space-x-2 items-center justify-center btn btn-secondary">
+          <span>View all categories</span>
+          <span>
+            <?php echo svg(['sprite' => 'icon-arrow-right', 'class' => 'text-white size-4']); ?>
+          </span>
+        </a>
+      </div>
     </div>
   </div>
 <?php } ?>

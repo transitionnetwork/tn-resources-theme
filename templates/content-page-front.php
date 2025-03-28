@@ -14,6 +14,5 @@
     <?php endwhile; ?>
 
   <?php } ?>
-
 </main>
 

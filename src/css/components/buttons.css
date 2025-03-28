@@ -4,11 +4,11 @@
   }
 
   .btn-primary {
-    @apply bg-brand text-white hover:brightness-125;
+    @apply bg-brand text-brand-white hover:brightness-125;
   }
 
   .btn-secondary {
-    @apply bg-brand-secondary text-white hover:brightness-110;
+    @apply bg-brand-secondary text-brand-white hover:brightness-110;
   }
 
   .btn-tertiary {
@@ -16,11 +16,11 @@
   }
 
   .btn-brand-v2 {
-    @apply bg-brand-v2 text-white border-brand-v3 hover:brightness-110;
+    @apply bg-brand-v2 text-brand-white border-brand-v3 hover:brightness-110;
   }
 
   .btn-brand-v3 {
-    @apply bg-brand-v3 text-white border-brand-v3 hover:brightness-110;
+    @apply bg-brand-v3 text-brand-white border-brand-v3 hover:brightness-110;
   }
 
   .button-group {

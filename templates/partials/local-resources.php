@@ -13,11 +13,13 @@
     <div id="local-resources-grid" class="grid grid-cols-12 gap-6 my-12">
     </div>
 
-    <a href="" class="location-link flex space-x-2 items-center justify-center no-underline hover:underline">
-      <div><span class="location-name"></span></div>
-      <span>
-        <?php echo svg(['sprite' => 'icon-arrow-right', 'class' => 'text-black size-4']); ?>
-      </span>
-    </a>
+    <div class="text-center">
+      <a href="" class="location-link inline-flex space-x-2 items-center justify-center btn btn-primary">
+        <span class="location-name"></span>
+        <span>
+          <?php echo svg(['sprite' => 'icon-arrow-right', 'class' => 'text-white size-4']); ?>
+        </span>
+      </a>
+    </div>
   </div>
 </div>
