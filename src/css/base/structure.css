@@ -3,7 +3,7 @@ html {
 }
 
 body {
-  @apply antialiased bg-gray-100;
+  @apply antialiased bg-brand-white;
 
   &.footer-sticky {
     @apply flex flex-col min-h-screen;

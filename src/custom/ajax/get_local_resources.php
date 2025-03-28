@@ -9,6 +9,7 @@ function xinc_get_local_resources() {
   $args = array(
     'post_type' => 'resource',
     'posts_per_page' => 3,
+    'post_status' =>  'publish',
     'tax_query' => array(
         array(
           'taxonomy' => 'country',

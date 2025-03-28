@@ -4,9 +4,8 @@ const GeoLocate = () => {
 
   //query cloudflare to obtain IP
   async function getCloudflareJSON() {
-    let data = await fetch('https://one.one.one.one/cdn-cgi/trace').then(res => res.text())
-    let arr = data.trim().split('\n').map(e => e.split('='))
-    return Object.fromEntries(arr)
+    let data = await fetch('https://geo.transition-space.org/json').then(res => res.text())
+    return JSON.parse(data)
   }
 
   getCloudflareJSON().then(function(arr) {
@@ -18,16 +17,14 @@ const GeoLocate = () => {
       let languageElement = document.querySelectorAll('.location-lang');
       let ipElement = document.querySelectorAll('.location-ip');
       let locationLink = document.querySelectorAll('.location-link');
-      
-      regionElement.forEach(el => {
-        el.append(lookup.byIso(arr['loc'])['region']);
-      });
+
+      let isoCode = arr['country']['iso_code'];
       
       continentElement.forEach(el => {
-        el.append(lookup.byIso(arr['loc'])['continent']);
+        el.append(arr['continent']['names']['en']);
       });
       
-      let locale = new Intl.Locale('und', { region: arr['loc'] });
+      let locale = new Intl.Locale('und', { region: isoCode });
       let lang = locale.maximize().language
       let languageNames = new Intl.DisplayNames(["en"], { type: "language" });
       let languageName = languageNames.of(lang)
@@ -36,12 +33,8 @@ const GeoLocate = () => {
         el.append(languageName);
       });
       
-      ipElement.forEach(el => {
-        el.append(arr['ip']);
-      });
-      
       locationLink.forEach(el => {
-        el.setAttribute("href", tofinoJS.siteURL + "/location/" + arr['loc'].toLowerCase());
+        el.setAttribute("href", tofinoJS.siteURL + "/location/" + isoCode.toLowerCase());
       });
 
       let getTarget = document.getElementById('geolocated-content').dataset.target;
@@ -54,7 +47,7 @@ const GeoLocate = () => {
         data: {
           action: 'getLocalResources',
           value: {
-            location: arr['loc'].toLowerCase(),
+            location: isoCode.toLowerCase(),
             target: getTarget
           }
         },
@@ -81,7 +74,7 @@ const GeoLocate = () => {
           if(response.country.location === 'global') {
             label = 'Worldwide Resources'
           } else {
-            label = 'Resources from ' + lookup.byIso(arr['loc'])['country']
+            label = 'Resources from ' + arr['country']['names']['en']
           }
 
           nameElement.forEach(el => {

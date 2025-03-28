@@ -20,17 +20,17 @@ use \Tofino\ThemeOptions\Notifications as n; ?>
 
 <?php n\notification('top'); ?>
 
-<header class="bg-white <?php echo m\menu_sticky(); ?>">
+<header class="bg-brand-white <?php echo m\menu_sticky(); ?>">
   <nav class="w-full flex flex-wrap justify-between lg:my-0 px-4">
 
     <div class="flex space-x-0 lg:space-x-6">
-      <div class="flex-shrink-0 flex items-center text-xl py-4 font-bold">
+      <div class="flex-shrink-0 flex items-center text-xl py-4 font-bold font-display">
         <a href="<?php echo home_url(); ?>" class="no-underline">
           Transition Resources
         </a>
       </div>
 
-      <div class="fixed inset-0 hidden w-full h-screen bg-white lg:h-auto lg:relative lg:w-auto lg:flex lg:items-center z-20" id="main-menu">
+      <div class="fixed inset-0 hidden w-full h-screen bg-brand-white lg:h-auto lg:relative lg:w-auto lg:flex lg:items-center z-20" id="main-menu">
         <?php
         if (has_nav_menu('header_navigation')) :
           wp_nav_menu([
@@ -74,12 +74,12 @@ use \Tofino\ThemeOptions\Notifications as n; ?>
       </div>
       <div class="flex items-center my-1">
         <?php if(!is_user_logged_in(  )) { ?>
-          <a href="<?php echo do_shortcode('[openid_connect_generic_auth_url]'); ?>" class="btn btn-secondary space-x-1">
+          <a href="<?php echo do_shortcode('[openid_connect_generic_auth_url]'); ?>" class="btn btn-brand-v3 space-x-2">
             <?php echo svg(['sprite' => 'icon-arrow-right', 'class' => 'text-white size-4']); ?>
             <span>Login with Transition ID</span>
           </a>
         <?php } else { ?>
-          <a href="<?php echo wp_logout_url(); ?>" class="btn btn-secondary space-x-1">
+          <a href="<?php echo wp_logout_url(); ?>" class="btn btn-secondary space-x-2">
             <?php echo svg(['sprite' => 'icon-arrow-right', 'class' => 'text-white size-4 rotate-180']); ?>
             <span>Logout</span>
           </a>

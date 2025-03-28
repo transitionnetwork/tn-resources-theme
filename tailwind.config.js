@@ -23,8 +23,8 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        'sans': ['Inter', 'Arial', 'Helvetica', 'sans-serif'],
-        'display': ['Fira Sans', 'Arial', 'Helvetica', 'sans-serif']
+        'sans': ['Instrument Sans', 'Arial', 'Helvetica', 'sans-serif'],
+        'display': ['Roca Bold', 'Arial', 'Helvetica', 'sans-serif']
       },
       fontSize: {
         '8xl': '5.125rem',
@@ -68,11 +68,14 @@ module.exports = {
       },
       colors: {
         brand: {
-          DEFAULT: '#007E8A',
-          secondary: '#1F3543',
-          tertiary: '#D6002E',
+          DEFAULT: '#003D5B',
+          secondary: '#D1495B',
+          tertiary: '#EDAE49',
+          v2: '#30638E',
+          v3: '#00798C',
           gray: '#4D4D4D',
-          black: '#000000'
+          black: '#000000',
+          white: '#FBF8EF'
         },
       }
     }

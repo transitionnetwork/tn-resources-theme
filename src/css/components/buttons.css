@@ -1,18 +1,26 @@
 @layer components {
   .btn {
-    @apply relative inline-flex items-center px-6 py-2 border border-transparent shadow-sm transition ease-in-out duration-150 whitespace-nowrap font-bold justify-center no-underline hover:brightness-110 focus:outline-none focus:ring rounded-md;
+    @apply relative inline-flex items-center px-6 py-2 border border-transparent shadow-sm transition ease-in-out duration-150 whitespace-nowrap font-bold text-lg justify-center no-underline hover:brightness-110 focus:outline-none focus:ring rounded-full;
   }
 
   .btn-primary {
-    @apply bg-brand text-white;
+    @apply bg-brand text-white hover:brightness-125;
   }
 
   .btn-secondary {
-    @apply bg-brand-secondary text-white;
+    @apply bg-brand-secondary text-white hover:brightness-110;
   }
 
   .btn-tertiary {
-    @apply bg-white text-gray-700 border-gray-500 hover:bg-brand-secondary hover:text-white;
+    @apply bg-brand-tertiary text-gray-700 border-gray-500 hover:brightness-110;
+  }
+
+  .btn-brand-v2 {
+    @apply bg-brand-v2 text-white border-brand-v3 hover:brightness-110;
+  }
+
+  .btn-brand-v3 {
+    @apply bg-brand-v3 text-white border-brand-v3 hover:brightness-110;
   }
 
   .button-group {
