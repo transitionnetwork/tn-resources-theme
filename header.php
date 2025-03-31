@@ -11,6 +11,7 @@ use \Tofino\ThemeOptions\Notifications as n; ?>
   
   <?php wp_head(); ?>
   <?php wp_oembed_add_discovery_links(); ?>
+  <?php get_template_part('/templates/partials/favicon'); ?>
 
 </head>
 
