@@ -25,9 +25,9 @@ use \Tofino\ThemeOptions\Notifications as n; ?>
   <nav class="w-full flex flex-wrap justify-between lg:my-0 px-4">
 
     <div class="flex space-x-0 lg:space-x-6">
-      <div class="flex-shrink-0 flex items-center text-xl py-4 font-bold font-display">
-        <a href="<?php echo home_url(); ?>" class="no-underline">
-          Transition Resources
+      <div class="flex-shrink-0 flex items-center mr-6">
+        <a href="<?php echo home_url(); ?>">
+          <img src="<?php echo get_template_directory_uri() . '/dist/img/tn-logo.png'; ?>" class="w-52 h-auto">
         </a>
       </div>
 
