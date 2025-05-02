@@ -1,7 +1,7 @@
 <?php
-// if( function_exists('acf_add_options_page') ) {
-// 	acf_add_options_page('General Options');
-// }
+if( function_exists('acf_add_options_page') ) {
+	acf_add_options_page('Featured Resources');
+}
 
 // function create_post_types() {
 //   register_post_type( 'partners',
