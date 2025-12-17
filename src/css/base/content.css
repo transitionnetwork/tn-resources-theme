@@ -101,3 +101,11 @@ h4,
 .screen-reader-text {
   @apply hidden;
 }
+
+.wp-caption {
+  @apply w-full mt-12;
+
+  .wp-caption-text {
+    @apply mt-4;
+  }
+}

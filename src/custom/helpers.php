@@ -26,3 +26,5 @@ function xinc_get_embed_nav_items() {
 
   return $nav_items;
 }
+
+add_filter( 'img_caption_shortcode_width', '__return_zero' );
