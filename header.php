@@ -13,6 +13,8 @@ use \Tofino\ThemeOptions\Notifications as n; ?>
   <?php wp_oembed_add_discovery_links(); ?>
   <?php get_template_part('/templates/partials/favicon'); ?>
 
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="b+sXmeHi26Fyp3pKXV0AFQ" async></script>
+
 </head>
 
 <body <?php body_class(); ?>>
