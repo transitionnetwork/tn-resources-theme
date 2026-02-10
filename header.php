@@ -15,6 +15,16 @@ use \Tofino\ThemeOptions\Notifications as n; ?>
 
   <script src="https://analytics.ahrefs.com/analytics.js" data-key="b+sXmeHi26Fyp3pKXV0AFQ" async></script>
 
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-934395512"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'AW-934395512');
+  </script>
+
 </head>
 
 <body <?php body_class(); ?>>
