@@ -1,0 +1,410 @@
+{
+    "key": "group_resource",
+    "title": "Resource Information",
+    "fields": [
+        {
+            "key": "field_author_select",
+            "label": "Identify the author",
+            "name": "author_select",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placeholder": "",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "choices": {
+                "1": "I wrote this",
+                "2": "Someone else wrote this"
+            },
+            "default_value": 1,
+            "ajax": 0,
+            "allow_custom": 0,
+            "search_placeholder": ""
+        },
+        {
+            "key": "field_authors",
+            "label": "Authors",
+            "name": "authors",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Add the author or authors of this resource",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "Add author",
+            "sub_fields": [
+                {
+                    "key": "field_author_name",
+                    "label": "Author Name",
+                    "name": "author_name",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Add the full name of the author.",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "placeholder": "",
+                    "default_value": "",
+                    "maxlength": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_authors"
+                },
+                {
+                    "key": "field_author_link",
+                    "label": "Author Link",
+                    "name": "author_link",
+                    "aria-label": "",
+                    "type": "url",
+                    "instructions": "Add the website of the author. Required when \"Someone else wrote this\" is selected.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "allow_null": 1,
+                    "placeholder": "",
+                    "default_value": "",
+                    "parent_repeater": "field_authors"
+                }
+            ],
+            "rows_per_page": 20,
+            "acfe_repeater_stylised_button": 0
+        },
+        {
+            "key": "field_license",
+            "label": "License",
+            "name": "license",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placeholder": "",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "choices": {
+                "1": "CC-BY",
+                "2": "CC-BY-NC",
+                "3": "All rights reserved"
+            },
+            "default_value": 1,
+            "ajax": 0,
+            "allow_custom": 0,
+            "search_placeholder": ""
+        },
+        {
+            "key": "field_files",
+            "label": "Files",
+            "name": "files",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "block",
+            "button_label": "Add File",
+            "sub_fields": [
+                {
+                    "key": "field_file",
+                    "label": "File",
+                    "name": "file",
+                    "aria-label": "",
+                    "type": "file",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "mime_types": "mp4,m4v,webm,ogv,flv,mp3,ogg,flac,m4a,wav,pdf",
+                    "return_format": "id",
+                    "library": "all",
+                    "min_size": 0,
+                    "max_size": 0,
+                    "uploader": "",
+                    "parent_repeater": "field_files"
+                },
+                {
+                    "key": "field_description",
+                    "label": "File Description",
+                    "name": "description",
+                    "aria-label": "",
+                    "type": "markdown",
+                    "instructions": "Describe the uploaded file. For PDFs, add the text in plaintext format for search purposes.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "id",
+                    "parent_repeater": "field_files"
+                }
+            ],
+            "rows_per_page": 20,
+            "acfe_repeater_stylised_button": 0
+        },
+        {
+            "key": "field_embed",
+            "label": "Embedded Media",
+            "name": "embed",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "Add Embedded Media",
+            "sub_fields": [
+                {
+                    "key": "field_file_static",
+                    "label": "Embed",
+                    "name": "embed",
+                    "aria-label": "",
+                    "type": "oembed",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "id",
+                    "width": "",
+                    "height": "",
+                    "parent_repeater": "field_embed"
+                }
+            ],
+            "rows_per_page": 20,
+            "acfe_repeater_stylised_button": 0
+        },
+        {
+            "key": "field_picture",
+            "label": "Image",
+            "name": "picture",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "uploader": "",
+            "return_format": "array",
+            "library": "all",
+            "mime_types": "",
+            "preview_size": "medium",
+            "min_width": 450,
+            "min_height": 300,
+            "max_width": 2100,
+            "max_height": 1400,
+            "min_size": 0,
+            "max_size": 0,
+            "acfe_thumbnail": 0
+        },
+        {
+            "key": "field_image_attribution",
+            "label": "Identify the source of the image",
+            "name": "image_attribution",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placeholder": "",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "choices": {
+                "1": "I created this",
+                "2": "Someone else created this"
+            },
+            "default_value": 1,
+            "ajax": 0,
+            "allow_custom": 0,
+            "search_placeholder": ""
+        },
+        {
+            "key": "field_image_source",
+            "label": "Image source",
+            "name": "image_source",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Add the source or sources of this image",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "Add source",
+            "sub_fields": [
+                {
+                    "key": "field_source_name",
+                    "label": "Source Name",
+                    "name": "source_name",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Add the name of the source.",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "placeholder": "",
+                    "default_value": "",
+                    "maxlength": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_image_source"
+                },
+                {
+                    "key": "field_source_link",
+                    "label": "Source Link",
+                    "name": "source_link",
+                    "aria-label": "",
+                    "type": "url",
+                    "instructions": "Add the website of the source. Required when \"Someone else created this\" is selected.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "allow_null": 1,
+                    "placeholder": "",
+                    "default_value": "",
+                    "parent_repeater": "field_image_source"
+                }
+            ],
+            "rows_per_page": 20,
+            "acfe_repeater_stylised_button": 0
+        },
+        {
+            "key": "field_related",
+            "label": "Related To",
+            "name": "related",
+            "aria-label": "",
+            "type": "post_object",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "resource"
+            ],
+            "post_status": [
+                "publish"
+            ],
+            "taxonomy": [],
+            "return_format": "object",
+            "multiple": 1,
+            "allow_null": 1,
+            "ui": 1,
+            "allow_in_bindings": 1,
+            "bidirectional": 0,
+            "bidirectional_target": [],
+            "save_custom": 0,
+            "save_post_type": "",
+            "save_post_status": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "resource"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "discussion",
+        "comments",
+        "author",
+        "format",
+        "page_attributes",
+        "tags",
+        "send-trackbacks"
+    ],
+    "active": true,
+    "description": "",
+    "show_in_rest": false
+}

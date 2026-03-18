@@ -79,7 +79,8 @@
                     "allow_in_bindings": 0,
                     "rows": 4,
                     "placeholder": "",
-                    "new_lines": ""
+                    "new_lines": "",
+                    "acfe_textarea_code": 0
                 },
                 {
                     "key": "field_es_subtext",
@@ -102,7 +103,12 @@
                     "media_upload": 0,
                     "delay": 0
                 }
-            ]
+            ],
+            "acfe_seamless_style": 0,
+            "acfe_group_modal": 0,
+            "acfe_group_modal_close": 0,
+            "acfe_group_modal_button": "",
+            "acfe_group_modal_size": "large"
         }
     ],
     "location": [
@@ -130,5 +136,6 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1742310000
+    "modified": 1742310000,
+    "local_file": "\/var\/www\/html\/wp-content\/themes\/current\/inc\/acf-json\/group_email_signup.json"
 }
