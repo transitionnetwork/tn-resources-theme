@@ -39,7 +39,6 @@ $custom_includes = [
   "src/custom/hooks.php",
   "src/custom/search-hook.php",
   "src/custom/routes.php",
-  "src/custom/acfe.php",
   "src/custom/rest-api.php",
   "src/custom/ajax/write_location.php",
   "src/custom/ajax/get_local_resources.php",

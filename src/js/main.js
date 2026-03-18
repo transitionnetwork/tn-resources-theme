@@ -6,9 +6,6 @@ import Menu from './modules/menu';
 
 import Accordion from './modules/accordion';
 
-//Geolocation
-import getLocalResources from './modules/get-local-resources';
-
 import saveUserLocation from './modules/save-user-location';
 
 import setLinkTarget from './modules/set-link-target';
@@ -51,10 +48,6 @@ export default {
       setLinkTarget();
     }
 
-    if (document.getElementById('geolocated-content')) {
-      getLocalResources();
-    }
-    
     if (document.getElementById('save-user-location')) {
       saveUserLocation();
     }
