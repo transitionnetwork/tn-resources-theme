@@ -1,5 +1,6 @@
 <main>
   <?php get_template_part('templates/partials/hero-banner'); ?>
+  <?php get_template_part('templates/partials/sign-up'); ?>
   <?php get_template_part('templates/partials/local-resources'); ?>
   <?php get_template_part('templates/partials/browse-categories'); ?>
   <?php get_template_part('templates/partials/resources-grid-wrapper'); ?>
