@@ -1,13 +1,19 @@
 .maintenance-mode-alert {
-  @apply fixed hidden inset-0 p-5 text-center text-white bg-red-600;
-
+  position: fixed;
+  display: none;
+  inset: 0;
+  padding: 1.25rem;
+  text-align: center;
+  color: white;
+  background-color: #dc2626;
   z-index: 999999;
 
   h1 {
-    @apply text-white;
+    color: white;
   }
 
   p {
-    @apply text-sm;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
   }
 }

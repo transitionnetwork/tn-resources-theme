@@ -1,7 +1,7 @@
 <div class="col-span-12 lg:col-span-4 flex">
-  <div class="card items-stretch flex flex-col">
+  <div class="tn-card items-stretch flex flex-col">
     <?php $image = get_field('picture', $post); ?>
-    <div class="h-0 pt-2/3 relative">
+    <div class="h-0 pt-[66.667%] relative">
       <a href="<?php the_permalink(); ?>">
         <?php if($image) { ?>
           <?php echo wp_get_attachment_image( $image['id'], 'full', false, array('class' => 'w-full h-full object-cover absolute inset-0 z-0') ); ?>
@@ -18,7 +18,7 @@
           <?php echo xinc_preview_content($post); ?>
         </div>
       </div>
-      <a class="btn btn-brand-v3 block text-center" href="<?php the_permalink(); ?>">Read</a>
+      <a class="tn-btn tn-btn-brand-v3 block text-center" href="<?php the_permalink(); ?>">Read</a>
     </div>
   </div>
 </div>

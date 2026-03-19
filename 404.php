@@ -6,7 +6,7 @@
     <?php _e('Sorry, but the page you were trying to view does not exist.', 'tofino'); ?>
   </div>
   <div>
-    <a class="btn btn-primary" href="<?php echo home_url(); ?>">Return Home</a>
+    <a class="tn-btn tn-btn-primary" href="<?php echo home_url(); ?>">Return Home</a>
   </div>
 </div>
 

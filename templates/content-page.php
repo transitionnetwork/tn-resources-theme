@@ -1,4 +1,4 @@
-<main class="content container mt-12">
+<main class="rich-text container mt-12">
   <div class="max-w-5xl">
     <h1 class="h2"><?php echo \Tofino\Helpers\title(); ?></h1>
     

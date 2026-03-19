@@ -1,37 +1,85 @@
-@layer components {
-  .btn {
-    @apply relative inline-flex items-center px-6 py-2 border border-transparent shadow-sm transition ease-in-out duration-150 whitespace-nowrap font-bold text-lg justify-center no-underline hover:brightness-110 focus:outline-none focus:ring rounded-full;
+@utility tn-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1.5rem;
+  border: 1px solid transparent;
+  box-shadow: var(--shadow-xs);
+  transition: all 150ms ease-in-out;
+  white-space: nowrap;
+  font-weight: 600;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  justify-content: center;
+  text-decoration: none;
+  border-radius: 9999px;
+
+  &:hover {
+    filter: brightness(1.1);
   }
 
-  .btn-primary {
-    @apply bg-brand text-brand-white hover:brightness-125;
+  &:focus {
+    outline: none;
+    box-shadow: var(--ring-offset-shadow, 0 0 #0000), var(--ring-shadow, 0 0 #0000), var(--shadow, 0 0 #0000);
   }
+}
 
-  .btn-secondary {
-    @apply bg-brand-secondary text-brand-white hover:brightness-110;
+@utility tn-btn-primary {
+  background-color: #003D5B;
+  color: #FBF8EF;
+
+  &:hover {
+    filter: brightness(1.25);
   }
+}
 
-  .btn-tertiary {
-    @apply bg-brand-tertiary text-gray-700 border-gray-500 hover:brightness-110;
+@utility tn-btn-secondary {
+  background-color: #D1495B;
+  color: #FBF8EF;
+
+  &:hover {
+    filter: brightness(1.1);
   }
+}
 
-  .btn-brand-v2 {
-    @apply bg-brand-v2 text-brand-white border-brand-v3 hover:brightness-110;
+@utility tn-btn-tertiary {
+  background-color: #EDAE49;
+  color: #4b5563;
+  border-color: #6b7280;
+
+  &:hover {
+    filter: brightness(1.1);
   }
+}
 
-  .btn-brand-v3 {
-    @apply bg-brand-v3 text-brand-white border-brand-v3 hover:brightness-110;
+@utility tn-btn-brand-v2 {
+  background-color: #30638E;
+  color: #FBF8EF;
+  border-color: #00798C;
+
+  &:hover {
+    filter: brightness(1.1);
   }
+}
 
-  .button-group {
-    @apply flex flex-col space-y-2.5 items-center lg:flex-row lg:space-x-2.5 lg:space-y-0 lg:justify-center;
+@utility tn-btn-brand-v3 {
+  background-color: #00798C;
+  color: #FBF8EF;
+  border-color: #00798C;
 
-    &.hero-buttons {
-      @apply items-start lg:justify-start;
-    }
+  &:hover {
+    filter: brightness(1.1);
   }
+}
 
-  .btn-sm {
-    @apply px-4 py-1;
+@utility tn-btn-sm {
+  padding: 0.25rem 1rem;
+}
+
+.button-group {
+  @apply flex flex-col space-y-2.5 items-center lg:flex-row lg:space-x-2.5 lg:space-y-0 lg:justify-center;
+
+  &.hero-buttons {
+    @apply items-start lg:justify-start;
   }
 }

@@ -132,7 +132,7 @@ function prefetch_scripts() {
   ];
 
   foreach ($scripts as $script) {
-    echo '<link rel="prefetch" as="script" href="' . mix('js/chunks/' . $script .  '.js', 'dist') . '" crossorigin="anonymous"/>';
+    echo '<link rel="prefetch" as="script" href="' . get_template_directory_uri() . '/dist/js/chunks/' . $script .  '.js" crossorigin="anonymous"/>';
   }
 }
 add_action('wp_head', 'prefetch_scripts');

@@ -19,12 +19,10 @@ http://codex.wordpress.org/CSS#WordPress_Generated_Classes */
   margin-bottom: .75rem;
 }
 
-@screen sm {
+@media (width >= 40rem) {
   /* Only float if not on a small device */
   .alignleft {
     margin-right: .75rem;
-
-
     @apply float-left;
   }
 
@@ -32,7 +30,7 @@ http://codex.wordpress.org/CSS#WordPress_Generated_Classes */
     margin-left: .75rem;
     @apply float-right;
   }
-} 
+}
 
 /* Enable responsive images in WP content */
 img {

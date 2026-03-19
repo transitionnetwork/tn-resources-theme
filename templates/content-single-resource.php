@@ -3,7 +3,7 @@
     <div class="max-w-5xl space-y-6">
       <?php $image = get_field('picture'); ?>
       <?php if($image) { ?>
-        <div class="h-0 pt-1/3 relative">
+        <div class="h-0 pt-[33.333%] relative">
           <?php echo wp_get_attachment_image( $image['id'], 'full', false, array('class' => 'w-full h-full object-cover absolute inset-0 z-0 rounded-md') ); ?>
         </div>
       <?php } ?>
@@ -13,7 +13,7 @@
       </div>
   
       <?php if(get_post_field('post_content', $post)) { ?>
-        <div class="content mt-8 child-links-blank">
+        <div class="rich-text mt-8 child-links-blank">
           <?php the_content(); ?>
         </div>
       <?php } ?>
@@ -22,7 +22,7 @@
       <?php if($files) { ?>
         <div class="space-y-4">
           <?php foreach($files as $file) { ?>
-            <div class="card p-4">
+            <div class="tn-card p-4">
               <?php $file_url = wp_get_attachment_url($file['file']); ?>
               <?php if($file_url) { ?>
                 <a href="<?php echo $file_url; ?>" class="flex items-center no-underline p-4" target="_blank">
@@ -37,13 +37,13 @@
               <?php if($description) { ?>
                 <div class="accordion">
                   <div class="accordion-header p-4">
-                    <div class="content">
+                    <div class="rich-text">
                       <?php echo wp_trim_words(strip_tags($description), 20); ?>
                     </div>
                     <?php if(substr_count(strip_tags($description), ' ') > 19) { ?>
                       <div class="flex pt-4">
                         <div>
-                          <a class="font-bold btn btn-secondary space-x-2">
+                          <a class="font-bold tn-btn tn-btn-secondary space-x-2">
                             <span>Read More</span>
                             <span class="transition-all duration-300">
                               <?php echo svg(array(
@@ -57,7 +57,7 @@
                     <?php } ?>
                   </div>
                   <div class="accordion-detail h-0 overflow-hidden transition-all duration-300">
-                    <div class="p-6 content child-links-blank">
+                    <div class="p-6 rich-text child-links-blank">
                       <?php echo $description; ?>
                     </div>
                   </div>

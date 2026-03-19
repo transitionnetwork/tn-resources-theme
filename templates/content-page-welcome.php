@@ -1,5 +1,5 @@
 <?php if(is_user_logged_in(  )) { ?>
-  <main class="content container mt-12" data-userid="<?php echo wp_get_current_user(  )->ID?>" id="save-user-location">
+  <main class="rich-text container mt-12" data-userid="<?php echo wp_get_current_user(  )->ID?>" id="save-user-location">
     <div class="max-w-5xl">
       <h1 class="h2"><?php echo \Tofino\Helpers\title(); ?></h1>
 

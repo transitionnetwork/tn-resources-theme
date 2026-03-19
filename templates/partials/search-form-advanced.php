@@ -46,6 +46,6 @@
     </div>
   <?php } ?>
 
-  <input type="submit" value="Search" class="btn btn-primary"/>
+  <input type="submit" value="Search" class="tn-btn tn-btn-primary"/>
 
 </form>

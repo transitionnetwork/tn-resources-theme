@@ -20,7 +20,7 @@
         <?php } ?>
       </div>
       <div class="text-center">
-        <a href="<?php echo home_url('project-types'); ?>" class="text-center inline-flex space-x-2 items-center justify-center btn btn-secondary">
+        <a href="<?php echo home_url('project-types'); ?>" class="text-center inline-flex space-x-2 items-center justify-center tn-btn tn-btn-secondary">
           <span>View all categories</span>
           <span>
             <?php echo svg(['sprite' => 'icon-arrow-right', 'class' => 'text-white size-4']); ?>

@@ -1,9 +1,13 @@
 .acf-button.button {
-  @apply btn btn-secondary btn-sm mb-6;
+  @apply tn-btn tn-btn-secondary tn-btn-sm mb-6;
 
   &.button-primary {
-    @apply btn-primary;
+    @apply tn-btn-primary;
   }
+}
+
+.acf-form-submit input[type="submit"] {
+  @apply tn-btn tn-btn-primary mt-4;
 }
 
 .acfe-form {

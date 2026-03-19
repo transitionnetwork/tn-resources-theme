@@ -89,7 +89,7 @@ function notification($position) {
   if ($position == get_theme_mod('notification_position', 'top')) {
     if (get_theme_mod('notification_text') && !isset($_COOKIE['tofino-notification-closed'])) : ?>
       <!-- Notifcation <?php echo $position; ?> -->
-      <div class="flex items-center bg-blue-400 text-white text-sm font-bold px-4 py-3 alert notification <?php echo $position; ?>" role="alert"  id="tofino-notification">
+      <div class="flex items-center bg-blue-400 text-white text-sm font-bold px-4 py-3 tn-alert notification <?php echo $position; ?>" role="alert"  id="tofino-notification">
         <div class="container flex justify-between">
           <span><?php echo nl2br(get_theme_mod('notification_text')); ?></span>
 

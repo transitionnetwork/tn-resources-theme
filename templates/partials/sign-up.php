@@ -6,7 +6,7 @@
   </div>
   <div class="container space-y-8 text-center relative">
     <h2 class="h1 text-brand-white"><?php echo $sign_up['title']; ?></h2>
-    <div class="space-y-8 text-brand-white content">
+    <div class="space-y-8 text-brand-white rich-text">
       <?php if ($sign_up['content']) : ?>
         <div class="text-xl"><?php echo $sign_up['content']; ?></div>
       <?php endif; ?>

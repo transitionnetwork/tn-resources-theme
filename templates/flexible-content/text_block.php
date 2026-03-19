@@ -1,3 +1,3 @@
-<div class="content">
+<div class="rich-text">
   <?php echo get_sub_field('text'); ?>
 </div>

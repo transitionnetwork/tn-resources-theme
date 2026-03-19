@@ -10,7 +10,3 @@
     @apply lg:mr-4;
   }
 }
-
-body {
-  @apply bg-gray-300;
-}

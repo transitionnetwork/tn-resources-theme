@@ -10,7 +10,7 @@
       </div>
     <?php } ?>
     <div class="text-center">
-      <a href="<?php echo home_url('resources'); ?>" class="text-center inline-flex space-x-2 items-center justify-center btn btn-primary">
+      <a href="<?php echo home_url('resources'); ?>" class="text-center inline-flex space-x-2 items-center justify-center tn-btn tn-btn-primary">
         <span>View all resources</span>
         <span>
           <?php echo svg(['sprite' => 'icon-arrow-right', 'class' => 'text-white size-4']); ?>

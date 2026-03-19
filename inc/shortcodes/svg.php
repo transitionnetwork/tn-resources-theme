@@ -9,7 +9,11 @@
  */
 function svg($atts) {
   // SVG Sprite URL
-  $svg_sprite_url = mix('dist/svg/sprite.svg', './');
+  $sprite_file = get_template_directory() . '/dist/svg/sprite.svg';
+  $svg_sprite_url = get_template_directory_uri() . '/dist/svg/sprite.svg';
+  if (file_exists($sprite_file)) {
+    $svg_sprite_url .= '?v=' . filemtime($sprite_file);
+  }
 
   if (gettype($atts) === 'string') {
     $atts = [

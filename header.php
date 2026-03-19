@@ -2,7 +2,7 @@
 use \Tofino\ThemeOptions\Menu as m;
 use \Tofino\ThemeOptions\Notifications as n; ?>
 <!doctype html>
-<html <?php language_attributes(); ?>>
+<html <?php language_attributes(); ?> data-theme="tn-resources">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -37,7 +37,7 @@ use \Tofino\ThemeOptions\Notifications as n; ?>
   <nav class="w-full flex flex-wrap justify-between lg:my-0 px-4 py-2">
 
     <div class="flex space-x-0 lg:space-x-6">
-      <div class="flex-shrink-0 flex items-center mr-6">
+      <div class="shrink-0 flex items-center mr-6">
         <a href="<?php echo home_url(); ?>">
           <img src="<?php echo get_template_directory_uri() . '/dist/img/tn-logo.png'; ?>" class="w-48 h-auto" alt="Transition Network International Logo" title="Transition Network International Logo">
         </a>
@@ -71,7 +71,7 @@ use \Tofino\ThemeOptions\Notifications as n; ?>
 
     <div class="flex w-full lg:w-auto flex-wrap my-1">
       <div class="flex items-center mr-2 my-1">
-        <a href="<?php echo get_the_permalink( 37 ); ?>" class="btn btn-primary space-x-1">
+        <a href="<?php echo get_the_permalink( 37 ); ?>" class="tn-btn tn-btn-primary space-x-1">
           <?php echo svg(['sprite' => 'icon-plus', 'class' => 'text-white w-5 h-5']); ?>
           <span>Submit Resource</span>
         </a>
@@ -87,12 +87,12 @@ use \Tofino\ThemeOptions\Notifications as n; ?>
       </div>
       <div class="flex items-center my-1">
         <?php if(!is_user_logged_in(  )) { ?>
-          <a href="<?php echo do_shortcode('[openid_connect_generic_auth_url]'); ?>" class="btn btn-brand-v3 space-x-2">
+          <a href="<?php echo do_shortcode('[openid_connect_generic_auth_url]'); ?>" class="tn-btn tn-btn-brand-v3 space-x-2">
             <?php echo svg(['sprite' => 'icon-arrow-right', 'class' => 'text-white size-4']); ?>
             <span>Login with Transition ID</span>
           </a>
         <?php } else { ?>
-          <a href="<?php echo wp_logout_url(); ?>" class="btn btn-brand-v3 space-x-2">
+          <a href="<?php echo wp_logout_url(); ?>" class="tn-btn tn-btn-brand-v3 space-x-2">
             <?php echo svg(['sprite' => 'icon-arrow-right', 'class' => 'text-white size-4 rotate-180']); ?>
             <span>Logout</span>
           </a>

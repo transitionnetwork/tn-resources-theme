@@ -1,9 +1,7 @@
-@layer components {
-  .accordion-header {
-    @apply cursor-pointer;
+.accordion-header {
+  @apply cursor-pointer;
 
-    &.rotated svg {
-      @apply rotate-180;
-    }
+  &.rotated svg {
+    @apply rotate-180;
   }
 }

@@ -4,7 +4,7 @@
   }
 }
 
-.alert {
+.tn-alert {
   @apply p-2;
 
   &.notification {

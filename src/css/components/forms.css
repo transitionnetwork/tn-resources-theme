@@ -16,8 +16,7 @@
   }
 
   input[type="submit"] {
-    @apply btn;
-    @apply btn-secondary;
+    @apply tn-btn tn-btn-secondary;
   }
 
   .field-wrap {

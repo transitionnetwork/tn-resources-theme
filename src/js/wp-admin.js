@@ -1,3 +1,5 @@
+import '../css/base/wp-admin.css'
+
 document.addEventListener('DOMContentLoaded', () => {
   if (document.querySelector('.maintenance-mode-alert')) {
     const button = document.querySelector('.maintenance-mode-alert button');

@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700');
+@import "tailwindcss";
+@plugin "daisyui";
+
+@plugin "daisyui/theme" {
+  name: "tn-resources";
+  default: true;
+  prefersdark: false;
+  color-scheme: light;
+  --color-base-100: #FBF8EF;
+  --color-base-200: #f0ede4;
+  --color-base-300: #e5e2d9;
+  --color-base-content: #000000;
+  --color-primary: #003D5B;
+  --color-primary-content: #FBF8EF;
+  --color-secondary: #D1495B;
+  --color-secondary-content: #FBF8EF;
+  --color-accent: #00798C;
+  --color-accent-content: #FBF8EF;
+  --color-neutral: #4D4D4D;
+  --color-neutral-content: #FBF8EF;
+  --color-info: #30638E;
+  --color-info-content: #FBF8EF;
+  --color-success: #00798C;
+  --color-success-content: #FBF8EF;
+  --color-warning: #EDAE49;
+  --color-warning-content: #4D4D4D;
+  --color-error: #D1495B;
+  --color-error-content: #FBF8EF;
+  --radius-selector: 1rem;
+  --radius-field: 9999px;
+  --radius-box: 1.25rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 1;
+  --noise: 0;
+}
+
+@theme {
+  --color-brand: #003D5B;
+  --color-brand-secondary: #D1495B;
+  --color-brand-tertiary: #EDAE49;
+  --color-brand-v2: #30638E;
+  --color-brand-v3: #00798C;
+  --color-brand-gray: #4D4D4D;
+  --color-brand-black: #000000;
+  --color-brand-white: #FBF8EF;
+
+  --font-sans: 'Instrument Sans', Arial, Helvetica, sans-serif;
+  --font-display: 'Roca Bold', Arial, Helvetica, sans-serif;
+
+  --font-weight-bold: 600;
+  --font-weight-extrabold: 900;
+
+  --radius-brand: 1.25rem;
+}
+
+@import './base/fonts.css';
+@import './base/alerts.css';
+@import './base/menu.css';
+@import './base/social-icons.css';
+@import './base/structure.css';
+@import './base/content.css';
+
+@import './layouts/nav.css';
+@import './layouts/footer.css';
+
+@import './components/embed.css';
+@import './components/container.css';
+@import './components/forms.css';
+@import './components/pagination.css';
+@import './components/spinner.css';
+@import './components/accordion.css';
+@import './components/buttons.css';
+@import './components/acf-forms.css';
+@import './components/components.css';

@@ -43,7 +43,7 @@ $location_url = ($country_code && !$is_global) ? site_url('/location/' . $countr
 
     <?php if ($location_url) : ?>
     <div class="text-center">
-      <a href="<?php echo esc_url($location_url); ?>" class="inline-flex space-x-2 items-center justify-center btn btn-primary">
+      <a href="<?php echo esc_url($location_url); ?>" class="inline-flex space-x-2 items-center justify-center tn-btn tn-btn-primary">
         <span><?php echo esc_html($label); ?></span>
         <span>
           <?php echo svg(['sprite' => 'icon-arrow-right', 'class' => 'text-white size-4']); ?>

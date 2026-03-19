@@ -11,23 +11,16 @@ namespace Tofino\Assets;
 /**
  * Load styles
  *
- * Register and enqueue the main stylesheet.
- * Filemtime added as a querystring to ensure correct version is sent to the client.
- * Called using call_css() function.
- *
- * @see call_css()
  * @since 1.0.0
  * @return void
  */
 function styles() {
-  $dir = 'dist';
-  $file_location = 'css/styles.css';
+  $css_file = get_template_directory() . '/dist/css/app.css';
 
-  $main_css = mix($file_location, $dir);
-
-  wp_register_style('tofino', $main_css, array(), filemtime(get_template_directory() . '/' . $dir . '/' . $file_location));
-
-  wp_enqueue_style('tofino');
+  if (file_exists($css_file)) {
+    wp_register_style('tofino', get_template_directory_uri() . '/dist/css/app.css', [], filemtime($css_file));
+    wp_enqueue_style('tofino');
+  }
 }
 add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\styles');
 
@@ -35,17 +28,16 @@ add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\styles');
 /**
  * Load admin styles
  *
- * Register and enqueue the stylesheet used in the admin area.
- * Filemtime added as a querystring to ensure correct version is sent to the client.
- * Function added to both the login_head (Login page) and admin_head (Admin pages)
- *
  * @since 1.0.0
  * @return void
  */
 function admin_styles() {
-  $admin_css = mix('dist/css/wp-admin.css', './');
-  wp_register_style('tofino/css/admin', $admin_css);
-  wp_enqueue_style('tofino/css/admin');
+  $css_file = get_template_directory() . '/dist/css/wp-admin.css';
+
+  if (file_exists($css_file)) {
+    wp_register_style('tofino/css/admin', get_template_directory_uri() . '/dist/css/wp-admin.css', [], filemtime($css_file));
+    wp_enqueue_style('tofino/css/admin');
+  }
 }
 add_action('login_head', __NAMESPACE__ . '\\admin_styles');
 add_action('admin_head', __NAMESPACE__ . '\\admin_styles');
@@ -54,25 +46,17 @@ add_action('admin_head', __NAMESPACE__ . '\\admin_styles');
 /**
  * Main JS script
  *
- * Register and enqueue the mains js used in front end.
- * Filemtime added as a querystring to ensure correct version is sent to the client.
- *
  * @since 1.1.0
  * @return void
  */
 function main_script() {
   if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
-    $manifest_js = mix('js/manifest.js', 'dist');
-    wp_register_script('tofino/manifest', $manifest_js, [], false, true);
-    wp_enqueue_script('tofino/manifest');
+    $js_file = get_template_directory() . '/dist/js/app.js';
 
-    $vendor_js = mix('js/vendor.js', 'dist');
-    wp_register_script('tofino/vendor', $vendor_js, [], false, true);
-    wp_enqueue_script('tofino/vendor');
-
-    $main_js = mix('js/app.js', 'dist');
-    wp_register_script('tofino', $main_js, 'tofino/vendor', false, true);
-    wp_enqueue_script('tofino');
+    if (file_exists($js_file)) {
+      wp_register_script('tofino', get_template_directory_uri() . '/dist/js/app.js', [], filemtime($js_file), true);
+      wp_enqueue_script('tofino');
+    }
   }
 }
 add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\main_script');
@@ -80,8 +64,6 @@ add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\main_script');
 
 /**
  * Localize script
- *
- * Make data available to JS scripts via global JS variables.
  *
  * @link https://codex.wordpress.org/Function_Reference/wp_localize_script
  * @since 1.1.0
@@ -96,7 +78,7 @@ function localize_scripts() {
       'themeUrl'       => get_template_directory_uri(),
       'notificationJS' => (get_theme_mod('notification_use_js') ? 'true' : 'false'),
       'siteURL'        => site_url(),
-      'userID'         => wp_get_current_user(  )->ID
+      'userID'         => wp_get_current_user()->ID
     ]);
   }
 }
@@ -106,24 +88,22 @@ add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\localize_scripts');
 /**
  * Load admin scripts
  *
- * Register and enqueue the scripts used in the admin area.
- * Filemtime added as a querystring to ensure correct version is sent to the client.
- *
  * @since 1.0.0
  * @return void
  */
 function admin_scripts() {
-  $admin_js = mix('dist/js/wp-admin.js', './');
-  wp_register_script('tofino/js/admin', $admin_js);
-  wp_enqueue_script('tofino/js/admin');
+  $js_file = get_template_directory() . '/dist/js/wp-admin.js';
+
+  if (file_exists($js_file)) {
+    wp_register_script('tofino/js/admin', get_template_directory_uri() . '/dist/js/wp-admin.js', [], filemtime($js_file), true);
+    wp_enqueue_script('tofino/js/admin');
+  }
 }
 add_action('admin_enqueue_scripts', __NAMESPACE__ . '\\admin_scripts');
 
 
 /**
  * Correct Image Sizes
- *
- * Set the images sizes to ones we really use.
  *
  * @since 3.2.0
  * @return void
