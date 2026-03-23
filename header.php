@@ -25,6 +25,8 @@ use \Tofino\ThemeOptions\Notifications as n; ?>
     gtag('config', 'AW-934395512');
   </script>
 
+  <?php get_template_part('templates/header/google-ads-conversion'); ?>
+
 </head>
 
 <body <?php body_class(); ?>>
