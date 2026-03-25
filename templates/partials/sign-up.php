@@ -1,7 +1,7 @@
 <?php $sign_up = get_field('email_signup', 'options'); ?>
 <?php if ($sign_up && $sign_up['title']) : ?>
   <div class="bg-brand py-16 relative overflow-hidden" id="subscribe">
-    <div class="absolute right-[120px] -bottom-[80px]">
+    <div class="absolute right-30 -bottom-20">
       <img src="<?php echo get_template_directory_uri() . '/dist/img/yellow-fern.png'; ?>" alt="Yellow Fern" class="max-w-64">
     </div>
     <div class="container space-y-8 text-center relative">
@@ -45,4 +45,3 @@
   </script>
 
 <?php endif; ?>
-

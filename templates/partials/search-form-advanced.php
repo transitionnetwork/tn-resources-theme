@@ -1,49 +1,42 @@
 <form class="space-y-6" action="<?php echo home_url(); ?>">
   <input type="hidden" name="post_type" value="resource" />
-  
-  <div class="field-wrapper w-full space-y-1">
-    <label for="advanced-search" class="text-sm">Search</label>
-    <div class="grid">
-      <input type="text" name="s" id="advanced-search" class="field w-full" placeholder="Search resources..." value="<?php echo get_query_var('s'); ?>">
-      <?php echo svg(['sprite' => 'icon-search', 'class' => 'pointer-events-none col-start-1 row-start-1 ml-3 size-5 self-center text-gray-400 sm:size-4']); ?> 
-    </div>
-  </div>
 
-  
+  <fieldset class="fieldset w-full">
+    <legend class="fieldset-legend">Search</legend>
+    <input type="text" name="s" id="advanced-search" class="input w-full" placeholder="Search resources..." value="<?php echo get_query_var('s'); ?>">
+  </fieldset>
+
+
   <?php $resource_types = get_terms(array(
     'taxonomy' => 'resource-type'
   )); ?>
-  
+
   <?php if($resource_types) { ?>
-    <div class="field-wrapper select w-full space-y-1">
-      <label for="resource-type">Resource Type</label>
-      <div class="mt-2 grid grid-cols-1">
-        <select name="resource-type" id="resource-type">
-          <option value="">Search All</option>
-          <?php foreach($resource_types as $resource_type) { ?>
-            <option value="<?php echo $resource_type->slug; ?>"><?php echo $resource_type->name; ?></option>
-          <?php } ?>
-        </select>
-      </div>
-    </div>
+    <fieldset class="fieldset w-full">
+      <legend class="fieldset-legend">Resource Type</legend>
+      <select name="resource-type" id="resource-type" class="select w-full">
+        <option value="">Search All</option>
+        <?php foreach($resource_types as $resource_type) { ?>
+          <option value="<?php echo $resource_type->slug; ?>"><?php echo $resource_type->name; ?></option>
+        <?php } ?>
+      </select>
+    </fieldset>
   <?php } ?>
-    
+
   <?php $project_types = get_terms(array(
     'taxonomy' => 'project-type'
   )); ?>
 
   <?php if($project_types) { ?>
-    <div class="field-wrapper select w-full space-y-1">
-      <label for="project-type">Project Type</label>
-      <div class="mt-2 grid grid-cols-1">
-        <select name="project-type" id="project-type">
-          <option value="">Search All</option>
-          <?php foreach($project_types as $project_type) { ?>
-            <option value="<?php echo $project_type->slug; ?>"><?php echo $project_type->name; ?></option>
-          <?php } ?>
-        </select>
-      </div>
-    </div>
+    <fieldset class="fieldset w-full">
+      <legend class="fieldset-legend">Project Type</legend>
+      <select name="project-type" id="project-type" class="select w-full">
+        <option value="">Search All</option>
+        <?php foreach($project_types as $project_type) { ?>
+          <option value="<?php echo $project_type->slug; ?>"><?php echo $project_type->name; ?></option>
+        <?php } ?>
+      </select>
+    </fieldset>
   <?php } ?>
 
   <input type="submit" value="Search" class="tn-btn tn-btn-primary"/>
