@@ -12,12 +12,6 @@
         <?php get_template_part('templates/partials/content-types'); ?>
       </div>
   
-      <?php if(get_post_field('post_content', $post)) { ?>
-        <div class="rich-text mt-8 child-links-blank">
-          <?php the_content(); ?>
-        </div>
-      <?php } ?>
-
       <?php $files = get_field('files'); ?>
       <?php if($files && is_array($files) && $files[0]['file']) { ?>
         <div class="space-y-4">
@@ -101,6 +95,12 @@
               </div>
             <?php } ?>
           <?php } ?>
+        </div>
+      <?php } ?>
+
+      <?php if(get_post_field('post_content', $post)) { ?>
+        <div class="rich-text mt-8 child-links-blank">
+          <?php the_content(); ?>
         </div>
       <?php } ?>
 

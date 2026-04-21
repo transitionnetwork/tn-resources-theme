@@ -10,6 +10,11 @@ $locale = get_user_meta( $user->ID, 'country_iso', true);
   <?php if(is_user_logged_in()) { ?>
     <div class="max-w-4xl rounded-md bg-white mx-auto p-12">
       <?php
+      add_filter('acf/prepare_field/key=_post_content', function ($field) {
+        $field['label'] = __('Description', 'tofino');
+        return $field;
+      });
+
       acf_form([
         'id'                    => 'submit-resource',
         'post_id'               => 'new_post',
@@ -21,7 +26,7 @@ $locale = get_user_meta( $user->ID, 'country_iso', true);
         'field_groups'          => ['group_resource'],
         'fields'                => false,
         'post_title'            => true,
-        'post_content'          => false,
+        'post_content'          => true,
         'form'                  => true,
         'form_attributes'       => [
           'id'      => 'submit-resource-form',
