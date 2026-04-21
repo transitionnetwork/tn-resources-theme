@@ -29,7 +29,7 @@ if (empty($resources['html'])) {
   return;
 }
 
-$label        = $is_global ? 'Worldwide Resources' : 'Resources from ' . $country_name;
+$label        = $is_global ? 'Latest Worldwide Resources' : 'Latest Resources from ' . $country_name;
 $location_url = ($country_code && !$is_global) ? site_url('/location/' . $country_code) : '';
 ?>
 
