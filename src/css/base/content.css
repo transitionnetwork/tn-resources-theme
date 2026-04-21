@@ -53,6 +53,19 @@
       margin-bottom: 0;
     }
 
+    /* Some pasted content renders paragraphs as <div> instead of <p> */
+    > div:not([class]) {
+      margin-bottom: 1.25rem;
+    }
+
+    > div:not([class]):last-child {
+      margin-bottom: 0;
+    }
+
+    > div:not([class]):empty {
+      display: none;
+    }
+
     strong {
       font-weight: 600;
     }
