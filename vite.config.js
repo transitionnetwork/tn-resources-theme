@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite'
 import tailwindcss from '@tailwindcss/vite'
 import path from 'path'
-import { copyFileSync, mkdirSync, readdirSync, readFileSync, writeFileSync, statSync } from 'fs'
+import { copyFileSync, mkdirSync, readdirSync, readFileSync, writeFileSync, statSync, chmodSync } from 'fs'
 
 function copyAssets() {
   return {
@@ -16,6 +16,7 @@ function copyAssets() {
             copyDir(srcPath, destPath)
           } else {
             copyFileSync(srcPath, destPath)
+            chmodSync(destPath, 0o644)
           }
         }
       }
@@ -80,6 +81,7 @@ function copyAssets() {
       const sprite = `<svg xmlns="http://www.w3.org/2000/svg" style="display:none">${symbols.join('')}</svg>`
       mkdirSync('dist/svg', { recursive: true })
       writeFileSync('dist/svg/sprite.svg', sprite)
+      chmodSync('dist/svg/sprite.svg', 0o644)
     },
   }
 }
