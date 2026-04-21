@@ -177,3 +177,72 @@ if (defined('WP_CLI') && WP_CLI) {
     }
   });
 }
+
+/**
+ * Admin page: Tools → GeoIP Database
+ */
+add_action('admin_menu', function () {
+  add_management_page(
+    'GeoIP Database',
+    'GeoIP Database',
+    'manage_options',
+    'xinc-geoip',
+    'xinc_geoip_render_admin_page'
+  );
+});
+
+add_action('admin_post_xinc_geoip_update', function () {
+  if (!current_user_can('manage_options')) wp_die('Unauthorized.', 403);
+  check_admin_referer('xinc_geoip_update');
+
+  $result = xinc_geoip_update_db();
+  $redirect = add_query_arg([
+    'page'          => 'xinc-geoip',
+    'geoip_status'  => $result['ok'] ? 'success' : 'error',
+    'geoip_message' => rawurlencode($result['message']),
+  ], admin_url('tools.php'));
+  wp_safe_redirect($redirect);
+  exit;
+});
+
+function xinc_geoip_render_admin_page() {
+  if (!current_user_can('manage_options')) return;
+
+  $db_path    = xinc_geoip_db_path();
+  $db_exists  = file_exists($db_path);
+  $db_size    = $db_exists ? size_format(filesize($db_path)) : '—';
+  $db_mtime   = $db_exists ? date_i18n('Y-m-d H:i:s', filemtime($db_path)) : '—';
+  $license    = xinc_geoip_license_key() ? 'set' : 'missing';
+  $next_cron  = wp_next_scheduled('xinc_geoip_weekly_update');
+
+  $status  = isset($_GET['geoip_status']) ? sanitize_key($_GET['geoip_status']) : '';
+  $message = isset($_GET['geoip_message']) ? sanitize_text_field(rawurldecode($_GET['geoip_message'])) : '';
+  ?>
+  <div class="wrap">
+    <h1>GeoIP Database</h1>
+
+    <?php if ($status === 'success') : ?>
+      <div class="notice notice-success"><p><?php echo esc_html($message); ?></p></div>
+    <?php elseif ($status === 'error') : ?>
+      <div class="notice notice-error"><p><?php echo esc_html($message); ?></p></div>
+    <?php endif; ?>
+
+    <table class="widefat striped" style="max-width:720px;margin-top:1em;">
+      <tbody>
+        <tr><th scope="row">License key</th><td><?php echo esc_html($license); ?></td></tr>
+        <tr><th scope="row">Database path</th><td><code><?php echo esc_html($db_path); ?></code></td></tr>
+        <tr><th scope="row">Database exists</th><td><?php echo $db_exists ? 'yes' : 'no'; ?></td></tr>
+        <tr><th scope="row">Database size</th><td><?php echo esc_html($db_size); ?></td></tr>
+        <tr><th scope="row">Last modified</th><td><?php echo esc_html($db_mtime); ?></td></tr>
+        <tr><th scope="row">Next scheduled update</th><td><?php echo $next_cron ? esc_html(date_i18n('Y-m-d H:i:s', $next_cron)) : '—'; ?></td></tr>
+      </tbody>
+    </table>
+
+    <form method="post" action="<?php echo esc_url(admin_url('admin-post.php')); ?>" style="margin-top:1.5em;">
+      <input type="hidden" name="action" value="xinc_geoip_update" />
+      <?php wp_nonce_field('xinc_geoip_update'); ?>
+      <?php submit_button('Refresh database now', 'primary', 'submit', false); ?>
+    </form>
+  </div>
+  <?php
+}
