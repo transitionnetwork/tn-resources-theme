@@ -4,7 +4,7 @@
   <?php if(property_exists($object, 'term_id')) { ?>
     <h1 class="h2 mb-2">Resources: <?php echo $object->name; ?></h1>
   <?php } else { ?>
-    <h1 class="h2 mb-2">Resources</h1>
+    <h1 class="h2">Resources</h1>
   <?php } ?>
   <?php if(have_posts()) { ?>
     <div class="grid grid-cols-12 gap-6">

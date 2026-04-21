@@ -37,7 +37,7 @@ $location_url = ($country_code && !$is_global) ? site_url('/location/' . $countr
   <div class="container">
     <h2 class="h3"><?php echo esc_html($label); ?></h2>
 
-    <div class="grid grid-cols-12 gap-6 my-12">
+    <div class="grid grid-cols-12 gap-6 my-6">
       <?php echo $resources['html']; ?>
     </div>
 

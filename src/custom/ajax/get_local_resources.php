@@ -14,11 +14,31 @@
  * @return string|false Lowercase ISO code (e.g. 'gb') or false.
  */
 function xinc_get_country_code() {
+  // Dev override: define('GEOIP_COUNTRY_OVERRIDE', 'gb') in wp-config.php, or env var
+  $override = defined('GEOIP_COUNTRY_OVERRIDE') && GEOIP_COUNTRY_OVERRIDE
+    ? GEOIP_COUNTRY_OVERRIDE
+    : getenv('GEOIP_COUNTRY_OVERRIDE');
+  if ($override) {
+    return strtolower(sanitize_text_field($override));
+  }
+
+  // Cloudflare header (kept for forward-compat if ever proxied)
   if (!empty($_SERVER['HTTP_CF_IPCOUNTRY'])) {
     $code = strtolower(sanitize_text_field($_SERVER['HTTP_CF_IPCOUNTRY']));
-    // CF returns 'xx' for unknown / Tor
-    return ($code !== 'xx' && $code !== 't1') ? $code : false;
+    if ($code !== 'xx' && $code !== 't1') {
+      return $code;
+    }
   }
+
+  // MaxMind GeoLite2 lookup
+  if (function_exists('xinc_geoip_lookup')) {
+    $ip = xinc_get_visitor_ip();
+    $code = xinc_geoip_lookup($ip);
+    if ($code) {
+      return $code;
+    }
+  }
+
   return false;
 }
 
@@ -59,12 +79,17 @@ function xinc_get_cached_local_resources($country_code) {
     'post_type'      => 'resource',
     'posts_per_page' => 3,
     'post_status'    => 'publish',
-    'tax_query'      => [[
-      'taxonomy' => 'country',
-      'field'    => 'slug',
-      'terms'    => $country_code,
-    ]],
   ];
+
+  if($country_code !== 'global') {
+    $args['tax_query'] = [
+      [
+        'taxonomy' => 'country',
+        'field'    => 'slug',
+        'terms'    => $country_code,
+      ],
+    ];
+  }
 
   $the_query = new WP_Query($args);
   $is_global = false;
