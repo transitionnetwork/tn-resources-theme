@@ -7,3 +7,9 @@ function after_login( $user_login, $user ) {
   }
 }
 add_action('wp_login', 'after_login', 10, 2);
+
+add_action('template_redirect', function () {
+  if (is_page('submit-resource') && function_exists('acf_form_head')) {
+    acf_form_head();
+  }
+});

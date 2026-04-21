@@ -10,16 +10,62 @@
   @apply tn-btn tn-btn-primary mt-4;
 }
 
-.acfe-form {
-  .acf-fields > .acf-field {
-    @apply py-8;
+.acf-form-fields {
+  --radius-field: 0.5rem;
+
+  > .acf-field {
+    @apply py-3 border-none;
   }
 
-  .acf-field input[type="text"],
-  .acf-editor-wrap .wp-editor-container,
-  .select2-selection,
-  select {
-    @apply field p-2;
+  .acf-label label {
+    @apply label text-sm font-medium text-base-content mb-1;
+  }
+
+  .acf-label .acf-required {
+    @apply text-error;
+  }
+
+  .acf-input input[type="text"],
+  .acf-input input[type="url"],
+  .acf-input input[type="email"],
+  .acf-input input[type="number"],
+  .acf-input input[type="password"],
+  .acf-input input[type="search"],
+  .acf-input input[type="tel"],
+  .acf-input input[type="date"],
+  .acf-input input[type="time"] {
+    @apply input w-full bg-white;
+  }
+
+  .acf-input select {
+    @apply select w-full bg-white;
+  }
+
+  .acf-input textarea {
+    @apply textarea w-full;
+  }
+
+  .acf-input input[type="file"] {
+    @apply file-input w-full bg-white;
+  }
+
+  .acf-input .acf-input-wrap {
+    @apply w-full;
+  }
+
+  .acf-input p.description,
+  .acf-input .acf-notice {
+    @apply text-xs text-base-content/60 mt-1;
+  }
+
+  .acf-repeater .acf-row {
+    @apply border border-base-300 rounded-box p-4 mb-3;
+  }
+
+  .acf-oembed .canvas,
+  .acf-image-uploader .view,
+  .acf-file-uploader .view {
+    @apply border border-base-300 p-4 bg-white;
   }
 }
 
