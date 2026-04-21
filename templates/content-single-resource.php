@@ -19,7 +19,7 @@
       <?php } ?>
 
       <?php $files = get_field('files'); ?>
-      <?php if($files) { ?>
+      <?php if($files && is_array($files) && $files[0]['file']) { ?>
         <div class="space-y-4">
           <?php foreach($files as $file) { ?>
             <div class="tn-card p-4">
@@ -70,11 +70,36 @@
 
       <?php $embed = get_field('embed'); ?>
       <?php if($embed) { ?>
-        <div class="space-y-12">
+        <div class="space-y-6">
           <?php foreach($embed as $item) { ?>
-            <div class="embed-item">
-              <?php echo $item['embed'] ?>
-            </div>
+            <?php
+            $embed_html = trim($item['embed']);
+            $is_link_only = preg_match('/^<a\s[^>]*href="([^"]+)"[^>]*>(.*?)<\/a>$/is', $embed_html, $link_match);
+            ?>
+            <?php if ($is_link_only) {
+              $link_url = $link_match[1];
+              $link_label = trim(strip_tags($link_match[2])) ?: parse_url($link_url, PHP_URL_HOST);
+              $link_host = parse_url($link_url, PHP_URL_HOST);
+            ?>
+              <a href="<?php echo esc_url($link_url); ?>" target="_blank" rel="noopener" class="tn-card flex items-center gap-4 p-5 no-underline hover:bg-base-200 transition-colors group">
+                <span class="shrink-0 flex items-center justify-center size-12 rounded-full bg-brand-v3 text-white">
+                  <?php echo svg(['sprite' => 'icon-external-link', 'class' => 'size-6']); ?>
+                </span>
+                <span class="flex flex-col min-w-0 grow">
+                  <span class="font-bold truncate"><?php echo esc_html($link_label); ?></span>
+                  <?php if ($link_host) { ?>
+                    <span class="text-sm text-base-content/60 truncate"><?php echo esc_html($link_host); ?></span>
+                  <?php } ?>
+                </span>
+                <span class="shrink-0 text-base-content/40 group-hover:text-base-content transition-colors">
+                  <?php echo svg(['sprite' => 'icon-arrow-right', 'class' => 'size-5']); ?>
+                </span>
+              </a>
+            <?php } else { ?>
+              <div class="embed-item">
+                <?php echo $embed_html; ?>
+              </div>
+            <?php } ?>
           <?php } ?>
         </div>
       <?php } ?>
