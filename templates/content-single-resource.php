@@ -7,7 +7,7 @@
           <?php echo wp_get_attachment_image( $image['id'], 'full', false, array('class' => 'w-full h-full object-cover absolute inset-0 z-0 rounded-md') ); ?>
         </div>
       <?php } ?>
-      <h1 class="h2 mb-2"><?php echo \Tofino\Helpers\title(); ?></h1>
+      <h1 class="h2"><?php echo \Tofino\Helpers\title(); ?></h1>
       <div class="mt-4">
         <?php get_template_part('templates/partials/content-types'); ?>
       </div>

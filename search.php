@@ -2,7 +2,7 @@
 
 <main class="container space-y-12 my-12">
   <div class="space-y-8">
-    <h1 class="h2 mb-2">
+    <h1 class="h2">
       <?php echo 'Search Results for &ldquo;' . get_query_var('s'). '&rdquo;'; ?>
       <?php $project_type = get_query_var('project-type');
       if($project_type ) {
