@@ -7,23 +7,16 @@
           <?php echo wp_get_attachment_image( $image['id'], 'full', false, array('class' => 'w-full h-full object-cover absolute inset-0 z-0 rounded-md') ); ?>
         </div>
       <?php } ?>
-      <h1 class="h2">Bundle: <?php echo \Tofino\Helpers\title(); ?></h1>
+      <h1 class="h2"><?php echo \Tofino\Helpers\title(); ?> Bundle</h1>
 
-      <?php if(get_post_field('post_content', $post)) { ?>
-        <div class="rich-text mt-8 child-links-blank">
-          <?php the_content(); ?>
+      <?php $intro = get_field('bundle_intro_content'); ?>
+      <?php if($intro) { ?>
+        <div class="rich-text text-lg child-links-blank">
+          <?php echo $intro; ?>
         </div>
       <?php } ?>
     </div>
 
-    <?php $resources = get_field('included_resources'); ?>
-    <?php if($resources) { ?>
-      <h2 class="h3 mt-12">Included Resources</h2>
-      <div class="grid grid-cols-12 gap-6 my-6">
-        <?php foreach($resources as $post) { ?>
-          <?php get_template_part('templates/cards/resource'); ?>
-        <?php } ?>
-      </div>
-    <?php } ?>
+    <?php get_template_part('templates/partials/bundle/flexible-content'); ?>
   </main>
 <?php endwhile; ?>
