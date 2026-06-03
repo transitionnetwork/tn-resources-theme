@@ -23,6 +23,8 @@ add_action( 'init',  function() {
 add_filter('query_vars', 'foo_my_query_vars');
 function foo_my_query_vars($vars){
     $vars[] = 'location';
+    $vars[] = 'source';    // context a single resource was reached from, e.g. 'bundle'
+    $vars[] = 'source_id'; // ID of the source post (e.g. the bundle the resource was opened from)
     return $vars;
 }
 

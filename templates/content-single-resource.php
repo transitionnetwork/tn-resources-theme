@@ -1,5 +1,8 @@
 <?php while (have_posts()) : the_post(); ?>
   <main class="container py-12">
+
+    <?php get_template_part('templates/partials/bundle-nav'); ?>
+
     <div class="max-w-5xl space-y-6">
       <?php $image = get_field('picture'); ?>
       <?php if($image) { ?>
@@ -151,7 +154,7 @@
       <?php $locale = get_the_terms( $post, 'country' ); ?>
 
       <?php $related = get_field('related'); ?>
-      <?php if($related) { ?>
+      <?php if($related && !xinc_get_bundle_source_context()) { ?>
         <div>
           <h2 class="h3">Related Resources</h2>
           <div class="grid grid-cols-12 gap-6 my-6">
@@ -160,10 +163,9 @@
               <?php get_template_part('templates/cards/resource'); ?>
             <?php } ?>
             <?php wp_reset_postdata(); ?>
-          <?php ?>
+          </div>
         </div>
       <?php } ?>
-
     </div>
   </main>
 
