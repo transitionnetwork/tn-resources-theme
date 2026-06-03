@@ -100,6 +100,73 @@ function xinc_get_bundle_source_context() {
   ];
 }
 
+/**
+ * Whether a single embed HTML blob is a video (iframe from a known video host,
+ * or a raw <video> tag).
+ */
+function xinc_embed_is_video($html) {
+  $html = trim((string) $html);
+  if ($html === '') {
+    return false;
+  }
+
+  if (stripos($html, '<video') !== false) {
+    return true;
+  }
+
+  if (preg_match('/<iframe[^>]+src=["\']([^"\']+)["\']/i', $html, $m)) {
+    $hosts = ['youtube.com', 'youtu.be', 'youtube-nocookie.com', 'vimeo.com', 'wistia', 'loom.com'];
+    foreach ($hosts as $host) {
+      if (stripos($m[1], $host) !== false) {
+        return true;
+      }
+    }
+  }
+
+  return false;
+}
+
+/**
+ * Whether a resource's content is a single video embed and nothing else
+ * (no downloadable files). Used to switch the CTA from "Read" to "Watch".
+ * A text description alongside the video does not disqualify it.
+ */
+function xinc_resource_is_video_only($post = null) {
+  $post = get_post($post);
+  if (!$post) {
+    return false;
+  }
+
+  // Any downloadable file means it is more than just a video.
+  $files = get_field('files', $post);
+  if (is_array($files)) {
+    foreach ($files as $file) {
+      if (!empty($file['file'])) {
+        return false;
+      }
+    }
+  }
+
+  // Must be exactly one non-empty embed, and it must be a video.
+  $embed = get_field('embed', $post);
+  $embed = is_array($embed) ? array_values(array_filter($embed, function ($item) {
+    return !empty($item['embed']) && trim($item['embed']) !== '';
+  })) : [];
+
+  if (count($embed) !== 1) {
+    return false;
+  }
+
+  return xinc_embed_is_video($embed[0]['embed']);
+}
+
+/**
+ * CTA label for a resource: "Watch" for video-only resources, "Read" otherwise.
+ */
+function xinc_get_resource_cta_label($post = null) {
+  return xinc_resource_is_video_only($post) ? 'Watch' : 'Read';
+}
+
 add_filter( 'img_caption_shortcode_width', '__return_zero' );
 
 /**

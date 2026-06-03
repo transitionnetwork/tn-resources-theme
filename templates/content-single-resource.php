@@ -115,14 +115,14 @@
           3 => 'All rights reserved'
         ); ?>
         <div>
-          <?php echo '<em>License: ' . $license_map[$license] . '</em>';  ?>
+          <?php echo 'License:&nbsp;' . $license_map[$license];  ?>
         </div>
       <?php } ?>
 
       <?php $authors = get_field('authors'); ?>
       <?php if($authors) { ?>
         <div class="flex space-x-2">
-          <span>Written by</span>
+          <span>Written by&nbsp;</span>
           <?php foreach($authors as $author) { ?>
             <?php if($author['author_link']) { ?>
               <a href="<?php echo $author['author_link']; ?>" target="_blank">

@@ -19,7 +19,7 @@
           <?php echo xinc_preview_content($post); ?>
         </div>
       </div>
-      <a class="tn-btn tn-btn-brand-v3 block text-center" href="<?php echo esc_url($resource_link); ?>">Read</a>
+      <a class="tn-btn tn-btn-brand-v3 block text-center" href="<?php echo esc_url($resource_link); ?>"><?php echo esc_html(xinc_get_resource_cta_label($post)); ?></a>
     </div>
   </div>
 </div>
