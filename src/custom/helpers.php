@@ -71,13 +71,12 @@ function xinc_get_bundle_source_context() {
     return null;
   }
 
-  // Sibling resources within the bundle, for prev/next navigation.
-  $resources = get_field('included_resources', $bundle_id);
-  $resources = is_array($resources) ? array_values(array_filter($resources)) : [];
+  // Sibling resources across the whole bundle, for prev/next navigation.
+  $resources = xinc_get_bundle_resources($bundle_id);
 
   $current_id = get_the_ID();
   $ids = array_map(function ($r) {
-    return is_object($r) ? $r->ID : (int) $r;
+    return $r->ID;
   }, $resources);
 
   $index = array_search($current_id, $ids, true);
@@ -95,9 +94,52 @@ function xinc_get_bundle_source_context() {
 
   return [
     'bundle' => $bundle,
-    'prev'   => is_object($prev) ? $prev : ($prev ? get_post($prev) : null),
-    'next'   => is_object($next) ? $next : ($next ? get_post($next) : null),
+    'prev'   => $prev,
+    'next'   => $next,
   ];
+}
+
+/**
+ * Ordered, de-duplicated list of resource posts for a bundle, flattened across
+ * every `linked_resources` row in the bundle flexible content. Falls back to
+ * the legacy `included_resources` field for bundles not yet migrated. Used so
+ * prev/next navigation traverses the entire bundle, not a single relationship.
+ *
+ * @return WP_Post[]
+ */
+function xinc_get_bundle_resources($bundle_id) {
+  $resources = [];
+
+  $rows = get_field('bundle_flexible_content', $bundle_id);
+  if (is_array($rows)) {
+    foreach ($rows as $row) {
+      if (($row['acf_fc_layout'] ?? '') !== 'linked_resources') {
+        continue;
+      }
+      foreach ((array) ($row['resource'] ?? []) as $resource) {
+        $resources[] = $resource;
+      }
+    }
+  }
+
+  // Legacy fallback for bundles still using the old field.
+  if (!$resources) {
+    $resources = (array) get_field('included_resources', $bundle_id);
+  }
+
+  // Normalise to WP_Post and de-duplicate by ID, preserving first appearance.
+  $unique = [];
+  foreach ($resources as $resource) {
+    if (!$resource) {
+      continue;
+    }
+    $post = is_object($resource) ? $resource : get_post($resource);
+    if ($post && !isset($unique[$post->ID])) {
+      $unique[$post->ID] = $post;
+    }
+  }
+
+  return array_values($unique);
 }
 
 /**
